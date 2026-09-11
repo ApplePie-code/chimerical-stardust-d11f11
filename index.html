@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晨观 · 市场动态导航台</title>
+<style>
+  :root{
+    --bg:#f5f7fb;
+    --panel:#ffffff;
+    --ink:#0f172a;
+    --ink-2:#475569;
+    --ink-3:#94a3b8;
+    --line:#e6eaf0;
+    --accent:#2563eb;
+    --accent-soft:#dbeafe;
+    --green:#16a34a;
+    --red:#dc2626;
+    --amber:#d97706;
+    --sidebar-1:#0b1220;
+    --sidebar-2:#1e293b;
+    --radius:14px;
+    --shadow:0 1px 2px rgba(15,23,42,.04), 0 8px 24px rgba(15,23,42,.06);
+    --shadow-lg:0 10px 40px rgba(15,23,42,.12);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased;line-height:1.55;}
+  a{text-decoration:none;color:inherit}
+  ::-webkit-scrollbar{width:8px;height:8px}
+  ::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:8px}
+  ::-webkit-scrollbar-thumb:hover{background:#94a3b8}
+
+  /* layout */
+  .app{display:flex;min-height:100vh}
+  .sidebar{
+    position:sticky;top:0;height:100vh;flex:0 0 240px;
+    background:linear-gradient(180deg,var(--sidebar-1) 0%,var(--sidebar-2) 100%);
+    color:#cbd5e1;display:flex;flex-direction:column;z-index:50;
+    box-shadow:4px 0 24px rgba(2,6,23,.18);
+  }
+  .brand{padding:22px 20px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(148,163,184,.15)}
+  .brand .logo{width:34px;height:34px;border-radius:9px;
+    background:linear-gradient(135deg,#3b82f6,#06b6d4);
+    display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;letter-spacing:.5px}
+  .brand .name{font-size:16px;font-weight:600;color:#fff;line-height:1.1}
+  .brand .sub{font-size:11px;color:#94a3b8;letter-spacing:.4px}
+  .nav{flex:1;overflow-y:auto;padding:14px 10px;display:flex;flex-direction:column;gap:4px}
+  .nav-section{font-size:11px;color:#64748b;padding:14px 10px 6px;letter-spacing:.8px;text-transform:uppercase}
+  .nav-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:9px;
+    color:#cbd5e1;font-size:14px;cursor:pointer;transition:all .18s ease;border:1px solid transparent}
+  .nav-item:hover{background:rgba(59,130,246,.12);color:#e2e8f0}
+  .nav-item.active{
+    background:linear-gradient(90deg,rgba(59,130,246,.22),rgba(59,130,246,.05));
+    border-color:rgba(59,130,246,.35);color:#fff;
+    box-shadow:inset 2px 0 0 var(--accent);
+  }
+  .nav-item .ic{width:18px;text-align:center;font-size:15px}
+  .nav-item .badge{margin-left:auto;font-size:10px;color:#94a3b8;background:rgba(148,163,184,.12);padding:2px 7px;border-radius:10px}
+  .nav-foot{padding:14px 18px;border-top:1px solid rgba(148,163,184,.15);font-size:11px;color:#64748b}
+
+  /* main */
+  .main{flex:1;min-width:0;display:flex;flex-direction:column}
+  .topbar{
+    position:sticky;top:0;z-index:40;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);padding:14px 28px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .menu-btn{display:none;width:38px;height:38px;border:1px solid var(--line);border-radius:10px;
+    background:#fff;cursor:pointer;font-size:18px;align-items:center;justify-content:center}
+  .search-wrap{display:flex;align-items:center;gap:10px;flex:1;max-width:780px}
+  .engine-switch{display:flex;gap:4px;background:#f1f5f9;padding:4px;border-radius:10px}
+  .engine-switch button{
+    border:0;background:transparent;padding:6px 12px;border-radius:7px;font-size:13px;color:var(--ink-2);cursor:pointer;transition:all .15s}
+  .engine-switch button.active{background:#fff;color:var(--accent);font-weight:600;box-shadow:0 1px 3px rgba(15,23,42,.08)}
+  .search-box{flex:1;display:flex;align-items:center;gap:8px;background:#f1f5f9;border:1px solid transparent;
+    border-radius:11px;padding:8px 14px;transition:all .15s}
+  .search-box:focus-within{background:#fff;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+  .search-box input{flex:1;border:0;background:transparent;outline:none;font-size:14px;color:var(--ink)}
+  .search-box .icon{color:var(--ink-3);font-size:16px}
+  .topbar-meta{margin-left:auto;display:flex;gap:18px;align-items:center;color:var(--ink-2);font-size:12px}
+  .topbar-meta .date{font-weight:600;color:var(--ink)}
+
+  /* content */
+  .content{padding:28px 28px 80px;max-width:1480px;width:100%}
+  .section{margin-bottom:54px;scroll-margin-top:80px}
+  .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid var(--line)}
+  .section-head h2{font-size:24px;margin:0;font-weight:700;letter-spacing:.4px}
+  .section-head .desc{color:var(--ink-3);font-size:13px}
+  .section-head .bar{flex:1;height:1px;background:linear-gradient(90deg,var(--accent),transparent);margin-left:auto;opacity:.4}
+
+  /* tabs */
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;padding:6px;background:#fff;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow);position:sticky;top:72px;z-index:20}
+  .tab{padding:8px 14px;border-radius:8px;font-size:13px;color:var(--ink-2);cursor:pointer;transition:all .15s;white-space:nowrap;border:1px solid transparent}
+  .tab:hover{background:#f8fafc;color:var(--ink)}
+  .tab.active{background:var(--accent);color:#fff;font-weight:500;box-shadow:0 4px 10px rgba(37,99,235,.3)}
+  .tab-pane{display:none;animation:fade .3s ease}
+  .tab-pane.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+  /* summary strip */
+  .summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:20px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;box-shadow:var(--shadow)}
+  .chip .lbl{font-size:11px;color:var(--ink-3);margin-bottom:4px}
+  .chip .val{font-size:16px;font-weight:700;color:var(--ink)}
+  .chip .chg{font-size:12px;font-weight:600;margin-left:6px}
+  .up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--amber)}
+
+  /* cards grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px;
+    display:flex;gap:14px;align-items:flex-start;cursor:pointer;position:relative;overflow:hidden;
+    transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+  }
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .25s ease}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:#dbe4f5}
+  .card:hover::before{transform:scaleY(1)}
+  .card .ic{
+    flex:0 0 42px;width:42px;height:42px;border-radius:10px;
+    background:linear-gradient(135deg,var(--accent-soft),#eff6ff);
+    color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:20px;
+  }
+  .card .body{flex:1;min-width:0}
+  .card .title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+  .card .title .tag{font-size:10px;padding:1px 6px;border-radius:6px;background:#eef2ff;color:var(--accent);font-weight:500}
+  .card .title .delta{margin-left:auto;font-size:12px;font-weight:600}
+  .card .desc{font-size:12.5px;color:var(--ink-2);line-height:1.55;word-break:break-word}
+  .card .meta{font-size:11px;color:var(--ink-3);margin-top:6px;display:flex;gap:8px;align-items:center}
+  .card .meta .dot{width:3px;height:3px;border-radius:50%;background:var(--ink-3)}
+  .card .arrow{position:absolute;right:14px;bottom:12px;font-size:14px;color:var(--ink-3);opacity:0;transition:opacity .2s}
+  .card:hover .arrow{opacity:1}
+
+  /* note box */
+  .note{background:linear-gradient(180deg,#fff,#fafbff);border:1px dashed #c7d2fe;border-radius:12px;padding:16px 20px;font-size:13px;color:var(--ink-2);margin-bottom:16px}
+  .note b{color:var(--ink)}
+  .note .pill{display:inline-block;background:#eef2ff;color:var(--accent);padding:2px 8px;border-radius:6px;font-size:11px;margin:0 3px}
+
+  /* placeholder */
+  .placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:260px;background:linear-gradient(180deg,#fff,#f8fafc);border:2px dashed var(--line);border-radius:16px;color:var(--ink-3);text-align:center;padding:30px}
+  .placeholder .big{font-size:42px;margin-bottom:10px}
+  .placeholder h3{margin:0 0 6px;font-size:16px;color:var(--ink-2)}
+  .placeholder p{margin:0;font-size:12.5px;max-width:360px}
+
+  /* live/static tag in chips */
+  .chip .lbl{display:flex;align-items:center;gap:5px}
+  .chip .lbl i{font-style:normal;font-size:9px;font-weight:700}
+  .chip .live{color:var(--green);animation:pulse 1.6s infinite}
+  .chip .static{color:var(--ink-3);font-size:9px;background:#eef2f7;padding:1px 4px;border-radius:4px}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .chip.flash .num{animation:flash .6s}
+  @keyframes flash{0%{color:#1e293b}50%{color:var(--accent)}100%{color:var(--ink)}}
+  .topbar-meta .live-dot{color:var(--green);font-size:8px;vertical-align:1px}
+  .topbar-meta .updated{color:var(--ink-2);font-variant-numeric:tabular-nums}
+
+  /* mobile sidebar */
+  .overlay{position:fixed;inset:0;background:rgba(2,6,23,.5);backdrop-filter:blur(2px);z-index:45;display:none}
+  .overlay.show{display:block}
+  @media(max-width:900px){
+    .sidebar{position:fixed;left:0;top:0;transform:translateX(-100%);transition:transform .28s ease;width:260px}
+    .sidebar.open{transform:translateX(0)}
+    .menu-btn{display:flex}
+    .content{padding:18px 14px 60px}
+    .topbar{padding:12px 14px}
+    .topbar-meta{display:none}
+    .tabs{position:static}
+    .section-head h2{font-size:20px}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <!-- ============ Sidebar ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="logo">晨</div>
+      <div>
+        <div class="name">晨观 · 市场台</div>
+        <div class="sub">MACRO × INDUSTRY</div>
+      </div>
+    </div>
+    <nav class="nav" id="nav">
+      <div class="nav-section">市场全景</div>
+      <a class="nav-item active" data-target="sec-macro"><span class="ic">🌍</span>宏观与大类资产<span class="badge">7</span></a>
+      <a class="nav-item" data-target="sec-industry"><span class="ic">🏭</span>行业动态<span class="badge">6</span></a>
+      <a class="nav-item" data-target="sec-factor"><span class="ic">📊</span>因子分析<span class="badge">待建</span></a>
+      <div class="nav-section">常用工具</div>
+      <a class="nav-item" data-href="https://www.cls.cn/telegraph"><span class="ic">⚡</span>财联社电报</a>
+      <a class="nav-item" data-href="https://quote.eastmoney.com/center/gridlist.html"><span class="ic">📈</span>东方财富行情</a>
+      <a class="nav-item" data-href="https://xueqiu.com/"><span class="ic">❄</span>雪球</a>
+      <a class="nav-item" data-href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"><span class="ic">🏦</span>CME FedWatch</a>
+    </nav>
+    <div class="nav-foot">数据更新于 2026-09-11<br>仅供研究参考,不构成投资建议</div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ============ Main ============ -->
+  <div class="main">
+    <!-- topbar -->
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+      <div class="search-wrap">
+        <div class="engine-switch" id="engineSwitch">
+          <button data-engine="baidu" class="active">百度</button>
+          <button data-engine="google">谷歌</button>
+          <button data-engine="bing">必应</button>
+          <button data-engine="xueqiu">雪球</button>
+        </div>
+        <div class="search-box">
+          <span class="icon">🔍</span>
+          <input id="searchInput" type="text" placeholder="搜索宏观、行业、个股… 回车跳转对应搜索引擎" />
+        </div>
+      </div>
+      <div class="topbar-meta">
+        <span class="date" id="dateLabel">2026-09-11 周五</span>
+        <span>·</span>
+        <span class="updated"><i class="live-dot">●</i> 行情刷新 <span id="updatedAt">—</span></span>
+        <span>·</span>
+        <span>沪深 1.66万亿</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- ===================== 一、宏观与大类资产 ===================== -->
+      <section class="section" id="sec-macro">
+        <div class="section-head">
+          <h2>宏观与大类资产动态</h2>
+          <span class="desc">2026-09-10 / 09-11 隔夜及昨日收盘</span>
+          <span class="bar"></span>
+        </div>
+
+        <div class="summary" id="summary">
+          <div class="chip" data-secid="100.DJIA"><div class="lbl">道指 <i class="live">●</i></div><div class="val"><span class="num">52,064.00</span><span class="chg down">-0.60%</span></div></div>
+          <div class="chip" data-secid="100.SPX"><div class="lbl">标普500 <i class="live">●</i></div><div class="val"><span class="num">7,591.70</span><span class="chg down">-0.58%</span></div></div>
+          <div class="chip" data-secid="100.NDX"><div class="lbl">纳指100 <i class="live">●</i></div><div class="val"><span class="num">26,081.72</span><span class="chg down">-0.65%</span></div></div>
+          <div class="chip" data-secid="113.CL"><div class="lbl">WTI原油 <i class="live">●</i></div><div class="val"><span class="num">102.48</span><span class="chg up">+6.69%</span></div></div>
+          <div class="chip" data-secid="113.BCO"><div class="lbl">布伦特原油 <i class="live">●</i></div><div class="val"><span class="num">107.63</span><span class="chg up">+6.34%</span></div></div>
+          <div class="chip" data-secid="100.US10YEAR"><div class="lbl">美债10Y <i class="live">●</i></div><div class="val"><span class="num">4.95%</span><span class="chg up">↑</span></div></div>
+          <div class="chip"><div class="lbl">9月加息25bp概率 <i class="static">静</i></div><div class="val">73%<span class="chg up">↑</span></div></div>
+          <div class="chip" data-secid="1.000001"><div class="lbl">上证指数 <i class="live">●</i></div><div class="val"><span class="num">3,934.40</span><span class="chg down">-0.43%</span></div></div>
+          <div class="chip" data-secid="100.HSI"><div class="lbl">恒生指数 <i class="live">●</i></div><div class="val"><span class="num">—</span><span class="chg down">-1.27%</span></div></div>
+          <div class="chip" data-secid="100.HSTECH"><div class="lbl">恒生科技 <i class="live">●</i></div><div class="val"><span class="num">—</span><span class="chg down">-2.04%</span></div></div>
+          <div class="chip"><div class="lbl">北向资金 <i class="static">静</i></div><div class="val">-185.6亿<span class="chg down">流出</span></div></div>
+          <div class="chip"><div class="lbl">南向资金 <i class="static">静</i></div><div class="val">+45.5亿<span class="chg up">流入</span></div></div>
+        </div>
+
+        <div class="tabs" data-tabs="macro">
+          <div class="tab active" data-tab="fx">美元与汇率</div>
+          <div class="tab" data-tab="bond">美债与加息概率</div>
+          <div class="tab" data-tab="commo">大宗商品</div>
+          <div class="tab" data-tab="us">隔夜美股</div>
+          <div class="tab" data-tab="apac">亚太与A50</div>
+          <div class="tab" data-tab="a">A股</div>
+          <div class="tab" data-tab="hk">港股</div>
+        </div>
+
+        <!-- tab: fx -->
+        <div class="tab-pane active" data-pane="fx">
+          <div class="grid">
+            <a class="card" href="https://www.investing.com/indices/us-dollar-index" target="_blank">
+              <div class="ic">💵</div><div class="body">
+                <div class="title">美元指数 DXY</div>
+                <div class="desc">PPI温和、但油价飙升推升美债收益率,美元指数维持高位震荡。中东局势与加息预期共振。</div>
+                <div class="meta"><span>Investing.com</span><span class="dot"></span><span>实时</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://quote.eastmoney.com/forex/USDEUR.html" target="_blank">
+              <div class="ic">🇪🇺</div><div class="body">
+                <div class="title">欧元/美元 EURUSD</div>
+                <div class="desc">欧洲能源价格受中东冲突传导承压,欧元相对美元走弱。关注欧央行9月议息表态。</div>
+                <div class="meta"><span>东方财富</span><span class="dot"></span><span>外汇</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://quote.eastmoney.com/forex/USDJPY.html" target="_blank">
+              <div class="ic">🇯🇵</div><div class="body">
+                <div class="title">美元/日元 USDJPY</div>
+                <div class="desc">日韩股市昨日跌近3%,日元避险需求升温。BOJ加息节奏与美日利差仍是关键变量。</div>
+                <div class="meta"><span>东方财富</span><span class="dot"></span><span>外汇</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.reuters.com/markets/currencies/" target="_blank">
+              <div class="ic">🌐</div><div class="body">
+                <div class="title">路透外汇快讯</div>
+                <div class="desc">全球主要货币对实时报价与新闻,美元、欧元、日元、人民币汇率综合参考。</div>
+                <div class="meta"><span>Reuters</span><span class="dot"></span><span>新闻</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- tab: bond -->
+        <div class="tab-pane" data-pane="bond">
+          <div class="grid">
+            <a class="card" href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html" target="_blank">
+              <div class="ic">🏦</div><div class="body">
+                <div class="title">CME FedWatch 加息概率</div>
+                <div class="desc">9月16日议息加息25bp概率73%,12月概率抬升至40-50%。PPI同比5.4%,仍远高于2%目标。</div>
+                <div class="meta"><span>CME</span><span class="dot"></span><span>实时定价</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.investing.com/rates-bonds/u.s.-10-year-bond-yield" target="_blank">
+              <div class="ic">📈</div><div class="body">
+                <div class="title">美国10年期国债收益率</div>
+                <div class="desc">突破4.95%,创2023年10月以来新高。财政部宣布回购60亿长债,是通常规模的三倍。</div>
+                <div class="meta"><span>Investing</span><span class="dot"></span><span>10Y</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.toutiao.com/article/7674511586031059466/" target="_blank">
+              <div class="ic">📊</div><div class="body">
+                <div class="title">2026加息情景推演</div>
+                <div class="desc">基准维持不变55-60%、年内加息一次35-40%、连续加息&lt;10%。对金银行情的传导路径拆解。</div>
+                <div class="meta"><span>头条</span><span class="dot"></span><span>深度</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" target="_blank">
+              <div class="ic">📅</div><div class="body">
+                <div class="title">FOMC议息日程</div>
+                <div class="desc">9月16日利率决议、点阵图与经济预测。CPI公布在即,油价与通胀预期的角力进入关键节点。</div>
+                <div class="meta"><span>Fed</span><span class="dot"></span><span>官方</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- tab: commo -->
+        <div class="tab-pane" data-pane="commo">
+          <div class="grid">
+            <a class="card" href="https://www.investing.com/commodities/gold" target="_blank">
+              <div class="ic">🥇</div><div class="body">
+                <div class="title">现货黄金</div>
+                <div class="desc">加息预期升温压制金价,但全球央行持续购金提供缓冲,扩大震荡区间,前期高点5596承压。</div>
+                <div class="meta"><span>Investing</span><span class="dot"></span><span>XAU</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://quote.eastmoney.com/global/WTI原油.html" target="_blank">
+              <div class="ic">🛢️</div><div class="body">
+                <div class="title">WTI原油</div>
+                <div class="desc">收102.48美元/桶,涨6.69%。美伊战争持续七个月,2月底以来累计涨52.9%,年初至今涨78.5%。</div>
+                <div class="meta"><span>东财</span><span class="dot"></span><span>NYMEX</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.investing.com/commodities/brent-oil" target="_blank">
+              <div class="ic">⛽</div><div class="body">
+                <div class="title">布伦特原油</div>
+                <div class="desc">收107.63美元/桶,涨6.34%,创5月19日以来最高。能源通胀重新向CPI/PPI传导。</div>
+                <div class="meta"><span>Investing</span><span class="dot"></span><span>ICE</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.investing.com/commodities/silver" target="_blank">
+              <div class="ic">🪙</div><div class="body">
+                <div class="title">现货白银</div>
+                <div class="desc">无央行储备托底,加息预期升温时金融资金快速撤离,波动显著大于黄金,关注金银比。</div>
+                <div class="meta"><span>Investing</span><span class="dot"></span><span>XAG</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- tab: us -->
+        <div class="tab-pane" data-pane="us">
+          <div class="grid">
+            <a class="card" href="https://www.sohu.com/a/1074528077_122014422/" target="_blank">
+              <div class="ic">📉</div><div class="body">
+                <div class="title">美股三大指数四连跌</div>
+                <div class="desc">道指-0.60%(52,064)、标普-0.58%(7,592)、纳指-0.65%(26,082)。高贝塔芯片股领跌,英特尔-5%、美光-4.7%。</div>
+                <div class="meta"><span>搜狐财经</span><span class="dot"></span><span>09-11</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.toutiao.com/w/1875993441039492/" target="_blank">
+              <div class="ic">🌙</div><div class="body">
+                <div class="title">隔夜外盘一览 09-11</div>
+                <div class="desc">费城半导体跌超2%,苹果涨超3%(发布折叠屏新品),英伟达跌超2%,SK海力士跌超5%。铜概念股大跌。</div>
+                <div class="meta"><span>头条</span><span class="dot"></span><span>晨报</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://finance.yahoo.com/quote/%5ENDX/" target="_blank">
+              <div class="ic">🇺🇸</div><div class="body">
+                <div class="title">纳斯达克100</div>
+                <div class="desc">科技股集中度高的NDX,反映AI、半导体、互联网龙头综合走势。可对照费城半导体指数。</div>
+                <div class="meta"><span>Yahoo</span><span class="dot"></span><span>NDX</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://quote.eastmoney.com/global/纳斯达克中国金龙指数.html" target="_blank">
+              <div class="ic">🐉</div><div class="body">
+                <div class="title">纳斯达克中国金龙指数</div>
+                <div class="desc">收5,788.60,跌0.66%。美团-3%,阿里、京东-3%。中概股普跌,关注港股联动传导。</div>
+                <div class="meta"><span>东财</span><span class="dot"></span><span>中概</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- tab: apac -->
+        <div class="tab-pane" data-pane="apac">
+          <div class="grid">
+            <a class="card" href="https://quote.eastmoney.com/global/日经225指数.html" target="_blank">
+              <div class="ic">🗼</div><div class="body">
+                <div class="title">日经225</div>
+                <div class="desc">9月11日早盘日本股指跌近3%。日元避险升温和美债收益率上行双重压制,外资流出担忧升温。</div>
+                <div class="meta"><span>东财</span><span class="dot"></span><span>N225</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://quote.eastmoney.com/global/韩国KOSPI指数.html" target="_blank">
+              <div class="ic">🇰🇷</div><div class="body">
+                <div class="title">KOSPI</div>
+                <div class="desc">韩国综合指数跌近3%。三星、SK海力士等存储和半导体板块下挫,与美股芯片股回调形成共振。</div>
+                <div class="meta"><span>东财</span><span class="dot"></span><span>KOSPI</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.investing.com/indices/ftse-china-a50-futures" target="_blank">
+              <div class="ic">🇨🇳</div><div class="body">
+                <div class="title">富时A50期货</div>
+                <div class="desc">盘前报14,513点,跌0.66%,A股开盘承压。夜盘期货对当日A股走势具有指引意义。</div>
+                <div class="meta"><span>Investing</span><span class="dot"></span><span>期货</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.cls.cn/telegraph" target="_blank">
+              <div class="ic">⚡</div><div class="body">
+                <div class="title">财联社7x24电报</div>
+                <div class="desc">亚太早盘实时滚动新闻,日本、韩国、港股盘前及A股开盘关键催化第一时间推送。</div>
+                <div class="meta"><span>财联社</span><span class="dot"></span><span>实时</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- tab: A股 -->
+        <div class="tab-pane" data-pane="a">
+          <div class="grid">
+            <a class="card" href="https://www.toutiao.com/article/7683873878136947250/" target="_blank">
+              <div class="ic">📰</div><div class="body">
+                <div class="title">9月10日 A股日报</div>
+                <div class="desc">上证3,934.40(-0.43%)、深成13,617.67(-0.77%)、创业3,338.42(-0.49%)。沪深成交1.66万亿,缩量2,100亿。955涨/4,500跌。</div>
+                <div class="meta"><span>头条</span><span class="dot"></span><span>日报</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://data.eastmoney.com/zjlx/dpzjlx.html" target="_blank">
+              <div class="ic">💸</div><div class="body">
+                <div class="title">北向资金 -185.55亿</div>
+                <div class="desc">午后转为明显流出,深股通-109亿。早盘一度净买入约+130亿,高位半导体和AI应用是主要减持方向。</div>
+                <div class="meta"><span>东财</span><span class="dot"></span><span>陆股通</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://quote.eastmoney.com/center/gridlist.html" target="_blank">
+              <div class="ic">🏦</div><div class="body">
+                <div class="title">银行板块逆势走强</div>
+                <div class="desc">中信银行、江苏银行、南京银行、杭州银行齐创历史新高。半年报营收3.14万亿(+7.42%),险资增配+“十五五”金融政策预期。</div>
+                <div class="meta"><span>东财</span><span class="dot"></span><span>板块</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.cls.cn/telegraph" target="_blank">
+              <div class="ic">🌱</div><div class="body">
+                <div class="title">绿电板块活跃</div>
+                <div class="desc">华银电力、闽东电力(2连板)、湖南发展、芯能科技涨停。七部门《数字化绿色化协同转型》及动力煤基准价本月上涨13%催化。</div>
+                <div class="meta"><span>财联社</span><span class="dot"></span><span>异动</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- tab: 港股 -->
+        <div class="tab-pane" data-pane="hk">
+          <div class="grid">
+            <a class="card" href="https://www.nbd.com.cn/articles/2026-09-10/4578051.html" target="_blank">
+              <div class="ic">🇭🇰</div><div class="body">
+                <div class="title">恒指 -1.27% / 恒生科技 -2.04%</div>
+                <div class="desc">科网股普跌,应用软件股大幅下挫。群核科技、智谱、云知声-10%,MiniMax-8%。中国人寿+2%,六大行齐涨。</div>
+                <div class="meta"><span>每经</span><span class="dot"></span><span>收评</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.jiemian.com/article/15077918.html" target="_blank">
+              <div class="ic">🏙</div><div class="body">
+                <div class="title">港股午评 09-10</div>
+                <div class="desc">网股集体下跌,阿里、美团跌逾3%,百度-2%,腾讯-2%。AI应用板块跌幅居前,智谱-8%、MINIMAX-W-7%。</div>
+                <div class="meta"><span>界面</span><span class="dot"></span><span>午评</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://quote.eastmoney.com/center/gridlist.html#hs_a_board" target="_blank">
+              <div class="ic">↩️</div><div class="body">
+                <div class="title">南向资金 +45.51亿</div>
+                <div class="desc">港股回调中,南向资金继续净买入,显见内地资金对港股核心资产的配置意愿仍在。高股息+AI龙头双线并行。</div>
+                <div class="meta"><span>东财</span><span class="dot"></span><span>港股通</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.hkex.com.hk/Market-Data" target="_blank">
+              <div class="ic">📋</div><div class="body">
+                <div class="title">港交所行情</div>
+                <div class="desc">港交所官方行情数据,主板成交、港股通额度使用情况、衍生品持仓等权威参考。</div>
+                <div class="meta"><span>HKEX</span><span class="dot"></span><span>官方</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 二、行业动态 ===================== -->
+      <section class="section" id="sec-industry">
+        <div class="section-head">
+          <h2>行业动态</h2>
+          <span class="desc">细分产业主体跟踪 · 概念动态更新</span>
+          <span class="bar"></span>
+        </div>
+
+        <div class="note">
+          <b>解决"概念板块不断变化"的思路:</b>
+          ① 以<span class="pill">申万三级行业</span>为锚定基础,覆盖相对稳定;
+          ② 跟踪<span class="pill">主题ETF重仓股</span>与<span class="pill">Wind/同花顺概念指数</span>成分变动作为概念更新信号;
+          ③ 利用券商深度研报与上市公司公告关键词聚类,自动发现新兴细分(如"电子布""PPO树脂""OCS光交换机");
+          ④ 一旦产业主体确定,<span class="pill">估值/业绩/多空逻辑</span>可直接挂接,大幅降低研究成本。
+        </div>
+
+        <div class="tabs" data-tabs="industry">
+          <div class="tab active" data-tab="semi">硬科技半导体</div>
+          <div class="tab" data-tab="comm">通信与算力</div>
+          <div class="tab" data-tab="optical">光模块</div>
+          <div class="tab" data-tab="newenergy">新能源</div>
+          <div class="tab" data-tab="advanced">高端制造</div>
+          <div class="tab" data-tab="cycle">周期资源</div>
+        </div>
+
+        <!-- semi -->
+        <div class="tab-pane active" data-pane="semi">
+          <div class="grid">
+            <a class="card" href="https://baike.baidu.com/item/碳化硅" target="_blank">
+              <div class="ic">🔷</div><div class="body">
+                <div class="title">碳化硅 SiC <span class="tag">三代半</span></div>
+                <div class="desc">耐高温高压低损耗高频,用于新能源车、高端通信、军工雷达、快充、算力电源。国内已实现材料-衬底-器件-封装全链条突破。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://baike.baidu.com/item/氮化镓" target="_blank">
+              <div class="ic">🟣</div><div class="body">
+                <div class="title">氮化镓 GaN <span class="tag">三代半</span></div>
+                <div class="desc">高频电力电子核心材料,快充、5G宏基站射频器件、激光雷达主力载体。国产衬底产能持续爬坡。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://baike.baidu.com/item/电子布" target="_blank">
+              <div class="ic">🧵</div><div class="body">
+                <div class="title">电子布基材 <span class="tag">PCB上游</span></div>
+                <div class="desc">高端高频PCB核心原材料,适配6G、CPO、高速服务器。国产替代进程提速,填补国内高端板材空白。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://baike.baidu.com/item/电子特种气体" target="_blank">
+              <div class="ic">🌬️</div><div class="body">
+                <div class="title">电子特种气体 <span class="tag">晶圆耗材</span></div>
+                <div class="desc">芯片刻蚀、沉积、提纯必需品,纯度决定良品率。过去100%进口,如今国产特气已进入国内各大晶圆厂供应链批量供货。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://data.eastmoney.com/bkzj/hy_BK0479.html" target="_blank">
+              <div class="ic">📉</div><div class="body">
+                <div class="title">半导体板块异动</div>
+                <div class="desc">9月10日:存储板块下挫,SK海力士-5%、美光-4.7%、费城半导体-2%。8日A股电子化学品、光刻机、半导体跌幅居前。</div>
+                <div class="meta"><span>东财</span><span class="dot"></span><span>资金流</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.cls.cn/telegraph" target="_blank">
+              <div class="ic">⚛️</div><div class="body">
+                <div class="title">HBM高带宽存储</div>
+                <div class="desc">AI算力拉动需求井喷,国产HBM进入验证放量阶段。今年容易被忽略的高潜力赛道,关注设备+材料配套链条。</div>
+                <div class="meta"><span>财联社</span><span class="dot"></span><span>主题</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- comm -->
+        <div class="tab-pane" data-pane="comm">
+          <div class="grid">
+            <a class="card" href="https://baike.baidu.com/item/6G" target="_blank">
+              <div class="ic">📡</div><div class="body">
+                <div class="title">6G 通信 <span class="tag">十五五头号</span></div>
+                <div class="desc">列入国家"十五五"通信重点,5G深化建设→6G预商用,400G/800G骨干网大规模替换周期开启,老旧光纤加速淘汰。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://baike.baidu.com/item/光纤光缆" target="_blank">
+              <div class="ic">🧶</div><div class="body">
+                <div class="title">光纤光缆 <span class="tag">通信路基</span></div>
+                <div class="desc">5G深化、6G预商用、全国算力网络搭建均离不开光纤铺设,需求持续放量。老旧普通光纤已适配不了高速数据传输。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://baike.baidu.com/item/OCS光交换机" target="_blank">
+              <div class="ic">🔀</div><div class="body">
+                <div class="title">OCS 光交换机 <span class="tag">数据中心调度</span></div>
+                <div class="desc">数据传输"交通枢纽调度中心",损耗更低、速度更快、承载量更大。运营商与数据中心批量升级,国产替代提速。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.miit.gov.cn/" target="_blank">
+              <div class="ic">🏛️</div><div class="body">
+                <div class="title">算力基础设施政策</div>
+                <div class="desc">工信部《算力基础设施高质量发展行动计划》:2026年底算力规模较2025年增30%+,智能算力占比≥60%。800G及以上光模块部署提速。</div>
+                <div class="meta"><span>工信部</span><span class="dot"></span><span>政策</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://baike.baidu.com/item/PPO树脂" target="_blank">
+              <div class="ic">🧪</div><div class="body">
+                <div class="title">PPO树脂 <span class="tag">高端板材</span></div>
+                <div class="desc">高端高频PCB核心树脂,适配6G、CPO、高速服务器的高频高速传输需求,填补国内高端板材空白。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://quote.eastmoney.com/bk/90.BK0448.html" target="_blank">
+              <div class="ic">🖥️</div><div class="body">
+                <div class="title">AI算力服务器</div>
+                <div class="desc">北美云厂商2026年Capex上调合计超500亿美元,绝大部分投向AI服务器与数据中心网络基础设施。订单能见度延伸至2027上半年。</div>
+                <div class="meta"><span>东财</span><span class="dot"></span><span>板块</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- optical -->
+        <div class="tab-pane" data-pane="optical">
+          <div class="grid">
+            <a class="card" href="https://baijiahao.baidu.com/s?id=1875149916011138829" target="_blank">
+              <div class="ic">🌟</div><div class="body">
+                <div class="title">光模块双雄反攻</div>
+                <div class="desc">中际旭创(300308)单日成交突破120亿,主力净流入超25亿,均列全市场第一。盘中触及+18%,带动光器件、光芯片、PCB联动上涨。</div>
+                <div class="meta"><span>百家号</span><span class="dot"></span><span>9月2日</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://baike.baidu.com/item/1.6T光模块" target="_blank">
+              <div class="ic">⚡</div><div class="body">
+                <div class="title">1.6T 光模块 <span class="tag">新一代</span></div>
+                <div class="desc">中际旭创率先规模化交付,单价和毛利率显著高于800G。半年度业绩预告净利润同比+80%~120%,20+家券商上调盈利预测。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://baike.baidu.com/item/共封装光学" target="_blank">
+              <div class="ic">🧩</div><div class="body">
+                <div class="title">CPO 共封装光学 <span class="tag">前沿</span></div>
+                <div class="desc">概念指数单日涨超5%。硅光、CPO等前沿技术产业化获政策支持,在新建数据中心部署比例持续提升。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://baike.baidu.com/item/硅光技术" target="_blank">
+              <div class="ic">💎</div><div class="body">
+                <div class="title">硅光 SiPhotonics</div>
+                <div class="desc">硅基集成光学技术,降低光模块成本、提升速率,是CPO、800G/1.6T升级的底层技术路径。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>前沿</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- newenergy -->
+        <div class="tab-pane" data-pane="newenergy">
+          <div class="grid">
+            <a class="card" href="https://baike.baidu.com/item/固态电池" target="_blank">
+              <div class="ic">🔋</div><div class="body">
+                <div class="title">固态电池 <span class="tag">下一代</span></div>
+                <div class="desc">高能量密度+高安全性,半固态已小批量装车,全固态2027年前后量产窗口期。电解质、正负极材料供应链重塑。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://baike.baidu.com/item/钠离子电池" target="_blank">
+              <div class="ic">🧂</div><div class="body">
+                <div class="title">钠离子电池 <span class="tag">储能</span></div>
+                <div class="desc">锂价高波动下,钠电凭借低成本与低温性能切入两轮车、储能、A00级乘用车,层状氧化物与聚阴离子路线并行。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://baike.baidu.com/item/一体化压铸" target="_blank">
+              <div class="ic">🚗</div><div class="body">
+                <div class="title">一体化压铸 <span class="tag">汽车制造</span></div>
+                <div class="desc">9000T+超大型压铸机+免热处理合金材料,重塑车身制造工艺,降本减重。新势力+特斯拉产业链核心。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://quote.eastmoney.com/bk/90.BK0480.html" target="_blank">
+              <div class="ic">☀️</div><div class="body">
+                <div class="title">光伏 · TOPCon/HJT/BC</div>
+                <div class="desc">N型电池迭代周期:TOPCon主流、HJT升级、BC差异化。组件价格磨底,产能出清进入中后段,龙头盈利能力分化。</div>
+                <div class="meta"><span>东财</span><span class="dot"></span><span>板块</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- advanced -->
+        <div class="tab-pane" data-pane="advanced">
+          <div class="grid">
+            <a class="card" href="https://baike.baidu.com/item/工业母机" target="_blank">
+              <div class="ic">🛠️</div><div class="body">
+                <div class="title">工业母机 / 五轴联动机床</div>
+                <div class="desc">高端数控机床国产替代加速,五轴联动为核心。政策"十五五"重点倾斜,下游航空、模具、新能源车需求共振。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://baike.baidu.com/item/人形机器人" target="_blank">
+              <div class="ic">🤖</div><div class="body">
+                <div class="title">人形机器人 <span class="tag">AI+制造</span></div>
+                <div class="desc">大模型驱动运动控制突破,2026年进入小批量量产。丝杠、减速器、力矩传感器、灵巧手为高弹性环节。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://baike.baidu.com/item/低空经济" target="_blank">
+              <div class="ic">🚁</div><div class="body">
+                <div class="title">低空经济 <span class="tag">eVTOL</span></div>
+                <div class="desc">eVTOL+无人机+空管基建,各地低空示范区落地,适航取证加速。整机、动力、空管、运营四条主线。</div>
+                <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://www.cls.cn/telegraph" target="_blank">
+              <div class="ic">📋</div><div class="body">
+                <div class="title">产业政策跟踪</div>
+                <div class="desc">工信部、发改委政策密集落地。中小企业"十五五"规划、AI中小企业三年培育计划(三年培育万家专精特新)。</div>
+                <div class="meta"><span>财联社</span><span class="dot"></span><span>政策</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- cycle -->
+        <div class="tab-pane" data-pane="cycle">
+          <div class="grid">
+            <a class="card" href="https://m.cngold.org/news/xw10745390.html" target="_blank">
+              <div class="ic">📈</div><div class="body">
+                <div class="title">油气板块 走势</div>
+                <div class="desc">能源化工ETF建信近5日+5.81%、近20日+15.76%。标普油气ETF富国近20日+11.99%。中东冲突叠加季节性,资源股形成多头共振。</div>
+                <div class="meta"><span>中金</span><span class="dot"></span><span>ETF复盘</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://quote.eastmoney.com/bk/90.BK0437.html" target="_blank">
+              <div class="ic">🌾</div><div class="body">
+                <div class="title">农产品 / 粮食</div>
+                <div class="desc">粮食ETF近20日涨超20%,包揽涨幅榜前列。9月10日农产品回调,中粮糖业、海南橡胶跌停,前期涨幅较大资金获利了结。</div>
+                <div class="meta"><span>东财</span><span class="dot"></span><span>板块</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://quote.eastmoney.com/bk/90.BK0439.html" target="_blank">
+              <div class="ic">⛏️</div><div class="body">
+                <div class="title">煤炭开采加工</div>
+                <div class="desc">9月8日板块涨幅居前,动力煤基准价本月上涨13%,带动电力+绿电板块活跃(华银电力、闽东电力涨停)。</div>
+                <div class="meta"><span>东财</span><span class="dot"></span><span>板块</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+            <a class="card" href="https://quote.eastmoney.com/bk/90.BK0447.html" target="_blank">
+              <div class="ic">🪙</div><div class="body">
+                <div class="title">黄金 · 贵金属</div>
+                <div class="desc">加息预期压制金银上涨空间,但全球央行持续购金提供缓冲,金价扩大震荡区间,前期高点5,596承压。</div>
+                <div class="meta"><span>东财</span><span class="dot"></span><span>板块</span></div>
+              </div><span class="arrow">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== 三、因子分析(预留) ===================== -->
+      <section class="section" id="sec-factor">
+        <div class="section-head">
+          <h2>因子分析</h2>
+          <span class="desc">板块预留 · 后续接入量化因子库</span>
+          <span class="bar"></span>
+        </div>
+
+        <div class="tabs" data-tabs="factor">
+          <div class="tab active" data-tab="value">估值因子</div>
+          <div class="tab" data-tab="momentum">动量因子</div>
+          <div class="tab" data-tab="quality">质量因子</div>
+          <div class="tab" data-tab="flow">资金因子</div>
+        </div>
+
+        <div class="tab-pane active" data-pane="value">
+          <div class="placeholder">
+            <div class="big">🧮</div>
+            <h3>估值因子 · 待接入</h3>
+            <p>计划接入 PE / PB / PS / PCF / 股息率 多因子复合排序,支持申万二/三级行业横截面对比,叠加历史分位与抱团度。</p>
+          </div>
+        </div>
+        <div class="tab-pane" data-pane="momentum">
+          <div class="placeholder">
+            <div class="big">🚀</div>
+            <h3>动量因子 · 待接入</h3>
+            <p>5日/20日/60日动量、相对强弱、突破信号、行业轮动节奏跟踪,可与资金因子联动生成择时信号。</p>
+          </div>
+        </div>
+        <div class="tab-pane" data-pane="quality">
+          <div class="placeholder">
+            <div class="big">💎</div>
+            <h3>质量因子 · 待接入</h3>
+            <p>ROE、毛利率、现金流稳定性、资产负债率、应收账款周转,筛选"高质量+合理估值"的细分产业龙头。</p>
+          </div>
+        </div>
+        <div class="tab-pane" data-pane="flow">
+          <div class="placeholder">
+            <div class="big">🌊</div>
+            <h3>资金因子 · 待接入</h3>
+            <p>北向、主力净流入、ETF份额变动、融资融券余额变化,多维度交叉验证行业景气度。</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ========== 日期标签 ========== */
+  var d=new Date();
+  var wk=['周日','周一','周二','周三','周四','周五','周六'][d.getDay()];
+  document.getElementById('dateLabel').textContent=
+    d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')+' '+wk;
+
+  /* ========== 移动端侧边栏 ========== */
+  var sidebar=document.getElementById('sidebar');
+  var overlay=document.getElementById('overlay');
+  var menuBtn=document.getElementById('menuBtn');
+  function toggleSidebar(force){sidebar.classList.toggle('open',force);overlay.classList.toggle('show',force);}
+  menuBtn.addEventListener('click',function(){toggleSidebar();});
+  overlay.addEventListener('click',function(){toggleSidebar(false);});
+
+  /* ========== 导航点击平滑滚动 ========== */
+  document.querySelectorAll('.nav-item').forEach(function(item){
+    item.addEventListener('click',function(e){
+      var href=item.getAttribute('data-href');
+      if(href){window.open(href,'_blank');return;}
+      var target=item.getAttribute('data-target');
+      if(target){
+        var el=document.getElementById(target);
+        if(el){
+          el.scrollIntoView({behavior:'smooth',block:'start'});
+          toggleSidebar(false);
+        }
+      }
+    });
+  });
+
+  /* ========== Scroll Spy ========== */
+  var sections=Array.from(document.querySelectorAll('.section'));
+  var navItems=Array.from(document.querySelectorAll('.nav-item[data-target]'));
+  function setActive(id){
+    navItems.forEach(function(n){
+      n.classList.toggle('active',n.getAttribute('data-target')===id);
+    });
+  }
+  var spy=new IntersectionObserver(function(entries){
+    var visible=entries.filter(function(e){return e.isIntersecting;})
+      .sort(function(a,b){return b.intersectionRatio-a.intersectionRatio;});
+    if(visible[0]){setActive(visible[0].target.id);}
+  },{rootMargin:'-30% 0px -55% 0px',threshold:[0,.25,.5,1]});
+  sections.forEach(function(s){spy.observe(s);});
+
+  /* ========== Tab 切换 ========== */
+  document.querySelectorAll('.tabs').forEach(function(tabs){
+    tabs.addEventListener('click',function(e){
+      var tab=e.target.closest('.tab');if(!tab)return;
+      var groupName=tabs.getAttribute('data-tabs');
+      var key=tab.getAttribute('data-tab');
+      tabs.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('active',t===tab);});
+      // find sibling pane container
+      var parent=tabs.parentNode;
+      parent.querySelectorAll('.tab-pane').forEach(function(p){
+        p.classList.toggle('active',p.getAttribute('data-pane')===key);
+      });
+    });
+  });
+
+  /* ========== 搜索引擎切换 ========== */
+  var engines={
+    baidu:'https://www.baidu.com/s?wd=',
+    google:'https://www.google.com/search?q=',
+    bing:'https://www.bing.com/search?q=',
+    xueqiu:'https://xueqiu.com/k?q='
+  };
+  var current='baidu';
+  var sw=document.getElementById('engineSwitch');
+  sw.addEventListener('click',function(e){
+    var btn=e.target.closest('button');if(!btn)return;
+    sw.querySelectorAll('button').forEach(function(b){b.classList.toggle('active',b===btn);});
+    current=btn.getAttribute('data-engine');
+  });
+  var input=document.getElementById('searchInput');
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Enter'&&input.value.trim()){
+      window.open(engines[current]+encodeURIComponent(input.value.trim()),'_blank');
+    }
+  });
+
+  /* ========== 实时行情刷新(东方财富 JSONP) ========== */
+  var liveChips=Array.from(document.querySelectorAll('.chip[data-secid]'));
+  var SECIDS=liveChips.map(function(c){return c.getAttribute('data-secid');});
+  var SPECIAL_FMT={
+    '100.US10YEAR':function(v){return v.toFixed(2)+'%';},
+    '113.CL':function(v){return v.toFixed(2);},
+    '113.BCO':function(v){return v.toFixed(2);}
+  };
+  function fmtNum(secid,v){
+    if(SPECIAL_FMT[secid])return SPECIAL_FMT[secid](v);
+    if(v>=1000)return v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+    return v.toFixed(2);
+  }
+  function applyQuote(d){
+    var secid=d.f13+'.'+d.f12;
+    var chip=document.querySelector('.chip[data-secid="'+secid+'"]');
+    if(!chip)return;
+    var num=d.f2,pct=d.f3;
+    var numEl=chip.querySelector('.num');
+    var chgEl=chip.querySelector('.chg');
+    if(numEl&&typeof num==='number'){numEl.textContent=fmtNum(secid,num);}
+    if(chgEl&&typeof pct==='number'){
+      chgEl.textContent=(pct>=0?'+':'')+pct.toFixed(2)+'%';
+      chgEl.className='chg '+(pct>0?'up':pct<0?'down':'flat');
+    }
+    chip.classList.remove('flash');void chip.offsetWidth;chip.classList.add('flash');
+  }
+  function tickUpdate(){var t=new Date();document.getElementById('updatedAt').textContent=
+    String(t.getHours()).padStart(2,'0')+':'+String(t.getMinutes()).padStart(2,'0')+':'+String(t.getSeconds()).padStart(2,'0');}
+  function loadQuotes(){
+    if(!SECIDS.length)return;
+    var cbName='__qcb_'+Date.now();
+    window[cbName]=function(resp){
+      try{
+        if(resp&&resp.data&&resp.data.diff){resp.data.diff.forEach(applyQuote);}
+        tickUpdate();
+      }finally{document.body.removeChild(s);delete window[cbName];}
+    };
+    var s=document.createElement('script');
+    s.src='https://push2.eastmoney.com/api/qt/ulist.np/get?cb='+cbName+
+      '&fltt=2&fields=f2,f3,f4,f12,f13,f14&secids='+SECIDS.join(',');
+    s.onerror=function(){document.body.removeChild(s);delete window[cbName];tickUpdate();};
+    document.body.appendChild(s);
+  }
+  loadQuotes();
+  setInterval(loadQuotes,30000);
+})();
+</script>
+</body>
+</html>
