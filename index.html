@@ -154,6 +154,26 @@
   .topbar-meta .live-dot{color:var(--green);font-size:8px;vertical-align:1px}
   .topbar-meta .updated{color:var(--ink-2);font-variant-numeric:tabular-nums}
 
+  /* 多空催化剂标签 */
+  .card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+  .card .tag-bull,.card .tag-bear{font-size:10.5px;padding:2px 8px;border-radius:5px;font-weight:500;line-height:1.4}
+  .card .tag-bull{background:#dcfce7;color:#15803d}
+  .card .tag-bear{background:#fee2e2;color:#b91c1c}
+  .card .tag-bull::before{content:'▲ '}
+  .card .tag-bear::before{content:'▼ '}
+  .card .rank{position:absolute;top:14px;right:38px;font-size:11px;color:var(--ink-3);font-weight:700;font-variant-numeric:tabular-nums;background:#f1f5f9;padding:1px 6px;border-radius:6px}
+  .note code{background:#eef2ff;color:var(--accent);padding:1px 6px;border-radius:4px;font-size:11px;font-family:ui-monospace,Menlo,Consolas,monospace}
+
+  /* 晨观要点条 */
+  .brief{background:linear-gradient(90deg,#fff,#eff6ff);border:1px solid #c7d2fe;border-radius:12px;padding:12px 18px;margin-bottom:18px;display:flex;gap:18px;align-items:center;font-size:13px;box-shadow:var(--shadow)}
+  .brief .ttl{font-weight:700;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:6px}
+  .brief .ttl .ic{color:var(--accent)}
+  .brief .items{display:flex;gap:14px;flex-wrap:wrap;flex:1;align-items:center}
+  .brief .item{color:var(--ink-2);padding-left:10px;border-left:2px solid #dbe4f5}
+  .brief .item b{color:var(--ink)}
+  .brief .item .up{color:var(--green);font-weight:600}
+  .brief .item .down{color:var(--red);font-weight:600}
+
   /* mobile sidebar */
   .overlay{position:fixed;inset:0;background:rgba(2,6,23,.5);backdrop-filter:blur(2px);z-index:45;display:none}
   .overlay.show{display:block}
@@ -229,6 +249,19 @@
           <h2>宏观与大类资产动态</h2>
           <span class="desc">2026-09-10 / 09-11 隔夜及昨日收盘</span>
           <span class="bar"></span>
+        </div>
+
+        <div class="brief">
+          <div class="ttl"><span class="ic">⚡</span>晨观 5 分钟</div>
+          <div class="items">
+            <div class="item"><b>美股</b>四连跌,道指<span class="down">-0.60%</span></div>
+            <div class="item"><b>原油</b>WTI突破100,<span class="up">+6.69%</span></div>
+            <div class="item"><b>美债10Y</b>4.95%,创年内新高</div>
+            <div class="item"><b>9月加息25bp</b>概率73%</div>
+            <div class="item"><b>A股</b>缩量1.66万亿,北向<span class="down">-185亿</span></div>
+            <div class="item"><b>港股</b>恒生科技<span class="down">-2.04%</span></div>
+            <div class="item"><b>日韩</b>早盘双双跌近3%</div>
+          </div>
         </div>
 
         <div class="summary" id="summary">
@@ -499,16 +532,8 @@
       <section class="section" id="sec-industry">
         <div class="section-head">
           <h2>行业动态</h2>
-          <span class="desc">细分产业主体跟踪 · 概念动态更新</span>
+          <span class="desc">细分产业主体跟踪 · 多空催化剂标签</span>
           <span class="bar"></span>
-        </div>
-
-        <div class="note">
-          <b>解决"概念板块不断变化"的思路:</b>
-          ① 以<span class="pill">申万三级行业</span>为锚定基础,覆盖相对稳定;
-          ② 跟踪<span class="pill">主题ETF重仓股</span>与<span class="pill">Wind/同花顺概念指数</span>成分变动作为概念更新信号;
-          ③ 利用券商深度研报与上市公司公告关键词聚类,自动发现新兴细分(如"电子布""PPO树脂""OCS光交换机");
-          ④ 一旦产业主体确定,<span class="pill">估值/业绩/多空逻辑</span>可直接挂接,大幅降低研究成本。
         </div>
 
         <div class="tabs" data-tabs="industry">
@@ -518,6 +543,7 @@
           <div class="tab" data-tab="newenergy">新能源</div>
           <div class="tab" data-tab="advanced">高端制造</div>
           <div class="tab" data-tab="cycle">周期资源</div>
+          <div class="tab" data-tab="tracker">产业主体追踪</div>
         </div>
 
         <!-- semi -->
@@ -528,6 +554,7 @@
                 <div class="title">碳化硅 SiC <span class="tag">三代半</span></div>
                 <div class="desc">耐高温高压低损耗高频,用于新能源车、高端通信、军工雷达、快充、算力电源。国内已实现材料-衬底-器件-封装全链条突破。</div>
                 <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+                <div class="tags"><span class="tag-bull">新能源车主驱+国产全链条突破</span><span class="tag-bear">消费类需求疲软、衬底价格战</span></div>
               </div><span class="arrow">↗</span>
             </a>
             <a class="card" href="https://baike.baidu.com/item/氮化镓" target="_blank">
@@ -563,6 +590,7 @@
                 <div class="title">HBM高带宽存储</div>
                 <div class="desc">AI算力拉动需求井喷,国产HBM进入验证放量阶段。今年容易被忽略的高潜力赛道,关注设备+材料配套链条。</div>
                 <div class="meta"><span>财联社</span><span class="dot"></span><span>主题</span></div>
+                <div class="tags"><span class="tag-bull">AI算力井喷、国产验证放量临界</span><span class="tag-bear">产能爬坡前估值已高</span></div>
               </div><span class="arrow">↗</span>
             </a>
           </div>
@@ -631,6 +659,7 @@
                 <div class="title">1.6T 光模块 <span class="tag">新一代</span></div>
                 <div class="desc">中际旭创率先规模化交付,单价和毛利率显著高于800G。半年度业绩预告净利润同比+80%~120%,20+家券商上调盈利预测。</div>
                 <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+                <div class="tags"><span class="tag-bull">订单能见度延伸2027H1、毛利率跃升</span><span class="tag-bear">海外Capex预期透支、地缘扰动</span></div>
               </div><span class="arrow">↗</span>
             </a>
             <a class="card" href="https://baike.baidu.com/item/共封装光学" target="_blank">
@@ -658,6 +687,7 @@
                 <div class="title">固态电池 <span class="tag">下一代</span></div>
                 <div class="desc">高能量密度+高安全性,半固态已小批量装车,全固态2027年前后量产窗口期。电解质、正负极材料供应链重塑。</div>
                 <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+                <div class="tags"><span class="tag-bull">高能量密度+安全性、半固态已装车</span><span class="tag-bear">全固态量产窗口未到、成本偏高</span></div>
               </div><span class="arrow">↗</span>
             </a>
             <a class="card" href="https://baike.baidu.com/item/钠离子电池" target="_blank">
@@ -665,6 +695,7 @@
                 <div class="title">钠离子电池 <span class="tag">储能</span></div>
                 <div class="desc">锂价高波动下,钠电凭借低成本与低温性能切入两轮车、储能、A00级乘用车,层状氧化物与聚阴离子路线并行。</div>
                 <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+                <div class="tags"><span class="tag-bull">储能井喷+两轮车渗透</span><span class="tag-bear">锂价反弹挤压性价比</span></div>
               </div><span class="arrow">↗</span>
             </a>
             <a class="card" href="https://baike.baidu.com/item/一体化压铸" target="_blank">
@@ -692,6 +723,7 @@
                 <div class="title">工业母机 / 五轴联动机床</div>
                 <div class="desc">高端数控机床国产替代加速,五轴联动为核心。政策"十五五"重点倾斜,下游航空、模具、新能源车需求共振。</div>
                 <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+                <div class="tags"><span class="tag-bull">十五五重点倾斜+航空模具共振</span><span class="tag-bear">订单交付周期长、产能爬坡慢</span></div>
               </div><span class="arrow">↗</span>
             </a>
             <a class="card" href="https://baike.baidu.com/item/人形机器人" target="_blank">
@@ -699,6 +731,7 @@
                 <div class="title">人形机器人 <span class="tag">AI+制造</span></div>
                 <div class="desc">大模型驱动运动控制突破,2026年进入小批量量产。丝杠、减速器、力矩传感器、灵巧手为高弹性环节。</div>
                 <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+                <div class="tags"><span class="tag-bull">大模型驱动量产临界、零部件弹性高</span><span class="tag-bear">量产前估值已高、场景落地待验证</span></div>
               </div><span class="arrow">↗</span>
             </a>
             <a class="card" href="https://baike.baidu.com/item/低空经济" target="_blank">
@@ -706,6 +739,7 @@
                 <div class="title">低空经济 <span class="tag">eVTOL</span></div>
                 <div class="desc">eVTOL+无人机+空管基建,各地低空示范区落地,适航取证加速。整机、动力、空管、运营四条主线。</div>
                 <div class="meta"><span>百科</span><span class="dot"></span><span>产业主体</span></div>
+                <div class="tags"><span class="tag-bull">政策密集落地+示范区放量</span><span class="tag-bear">适航周期长、商业化前估值高</span></div>
               </div><span class="arrow">↗</span>
             </a>
             <a class="card" href="https://www.cls.cn/telegraph" target="_blank">
@@ -726,6 +760,7 @@
                 <div class="title">油气板块 走势</div>
                 <div class="desc">能源化工ETF建信近5日+5.81%、近20日+15.76%。标普油气ETF富国近20日+11.99%。中东冲突叠加季节性,资源股形成多头共振。</div>
                 <div class="meta"><span>中金</span><span class="dot"></span><span>ETF复盘</span></div>
+                <div class="tags"><span class="tag-bull">中东冲突持续+季节性旺季</span><span class="tag-bear">高油价反噬需求、政策干预风险</span></div>
               </div><span class="arrow">↗</span>
             </a>
             <a class="card" href="https://quote.eastmoney.com/bk/90.BK0437.html" target="_blank">
@@ -733,6 +768,7 @@
                 <div class="title">农产品 / 粮食</div>
                 <div class="desc">粮食ETF近20日涨超20%,包揽涨幅榜前列。9月10日农产品回调,中粮糖业、海南橡胶跌停,前期涨幅较大资金获利了结。</div>
                 <div class="meta"><span>东财</span><span class="dot"></span><span>板块</span></div>
+                <div class="tags"><span class="tag-bull">气候异常供给扰动、粮农政策</span><span class="tag-bear">前期涨幅大、资金获利了结</span></div>
               </div><span class="arrow">↗</span>
             </a>
             <a class="card" href="https://quote.eastmoney.com/bk/90.BK0439.html" target="_blank">
@@ -750,6 +786,15 @@
               </div><span class="arrow">↗</span>
             </a>
           </div>
+        </div>
+
+        <!-- 产业主体追踪 -->
+        <div class="tab-pane" data-pane="tracker">
+          <div class="note" style="margin-bottom:14px">
+            <b>引擎原理:</b> 跑 <code>tracker.py</code> 抓取近 30 天券商研报 → 用细分产业词典在标题中精确匹配 → 按研报热度排序输出 <code>tracker-data.json</code>。这是 WorkBuddy 金融版结构上做不了的能力——它更新专家库的频率远低于产业演化速度。
+            <span style="display:block;margin-top:4px;color:var(--ink-3);font-size:11px">数据更新时间:<span id="trackerUpdated">读取中…</span> · 样本研报:<span id="trackerTotal">—</span> 篇</span>
+          </div>
+          <div class="grid" id="trackerGrid"></div>
         </div>
       </section>
 
@@ -931,6 +976,43 @@
   }
   loadQuotes();
   setInterval(loadQuotes,30000);
+
+  /* ========== 产业主体追踪引擎 · 加载 tracker-data.json ========== */
+  (function(){
+    var grid=document.getElementById('trackerGrid');
+    if(!grid)return;
+    fetch('tracker-data.json',{cache:'no-cache'})
+      .then(function(r){return r.json();})
+      .then(function(d){
+        if(!d||!d.items||!d.items.length){
+          grid.innerHTML='<div class="placeholder" style="grid-column:1/-1"><div class="big">📂</div><h3>暂无数据</h3><p>请先运行 <code>python tracker.py</code> 生成 tracker-data.json 后再部署。</p></div>';
+          return;
+        }
+        document.getElementById('trackerUpdated').textContent=d.updated||'—';
+        document.getElementById('trackerTotal').textContent=d.totalReports||'—';
+        var html=d.items.map(function(it,i){
+          var kw=it.keyword||'';
+          var co=(it.companies&&it.companies.length)?it.companies.join(' / '):'';
+          var title=it.sampleTitle||'';
+          var sample=title?(title.slice(0,80)+(title.length>80?'…':'')):'暂无样例研报';
+          var url=it.sampleUrl||'#';
+          var tagText='x'+it.count+'篇研报';
+          return '<a class="card" href="'+url+'" target="_blank" rel="noopener">'+
+            '<div class="ic">'+kw.slice(0,1)+'</div>'+
+            '<div class="body">'+
+              '<div class="title">'+kw+'<span class="tag">'+tagText+'</span><span class="rank">#'+(i+1)+'</span></div>'+
+              '<div class="desc">'+sample+'</div>'+
+              (co?'<div class="meta"><span>关联公司</span><span class="dot"></span><span>'+co+'</span></div>':'')+
+              '<div class="tags"><span class="tag-bull">研报热度活跃</span></div>'+
+            '</div><span class="arrow">↗</span></a>';
+        }).join('');
+        grid.innerHTML=html;
+      })
+      .catch(function(){
+        document.getElementById('trackerUpdated').textContent='加载失败';
+        grid.innerHTML='<div class="placeholder" style="grid-column:1/-1"><div class="big">⚠️</div><h3>数据加载失败</h3><p>本地双击 HTML 不支持 fetch,请部署到 Netlify 后访问。或本地运行 <code>python -m http.server 8000</code> 后访问 http://localhost:8000/</p></div>';
+      });
+  })();
 })();
 </script>
 </body>
