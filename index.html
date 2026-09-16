@@ -174,6 +174,16 @@
   .brief .item .up{color:var(--green);font-weight:600}
   .brief .item .down{color:var(--red);font-weight:600}
 
+  /* 研究知识库 - 观点卡片 / 引用输出 */
+  .quote-out{background:linear-gradient(180deg,#fff,#f8fafc);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:18px;box-shadow:var(--shadow)}
+  .kb-copy{border:1px solid var(--accent);background:#fff;color:var(--accent);padding:4px 12px;border-radius:7px;font-size:12px;cursor:pointer;font-weight:500;transition:all .15s}
+  .kb-copy:hover{background:var(--accent);color:#fff}
+  .opinion-card .title .tag{background:#fef3c7;color:#b45309}  /* 观点库卡片 tag 用琥珀色,区别于产业卡 */
+  .opinion-card .evidence{background:#f8fafc;border-left:3px solid var(--accent);padding:8px 12px;margin-top:6px;font-size:12px;color:var(--ink-2);border-radius:0 8px 8px 0;line-height:1.6}
+  .opinion-card .source-line{font-size:11px;color:var(--ink-3);margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .opinion-card .source-line a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+  .match-score{position:absolute;top:14px;right:38px;font-size:11px;font-weight:700;color:var(--green);background:#dcfce7;padding:2px 8px;border-radius:6px}
+
   /* mobile sidebar */
   .overlay{position:fixed;inset:0;background:rgba(2,6,23,.5);backdrop-filter:blur(2px);z-index:45;display:none}
   .overlay.show{display:block}
@@ -205,6 +215,7 @@
       <a class="nav-item active" data-target="sec-macro"><span class="ic">🌍</span>宏观与大类资产<span class="badge">7</span></a>
       <a class="nav-item" data-target="sec-industry"><span class="ic">🏭</span>行业动态<span class="badge">6</span></a>
       <a class="nav-item" data-target="sec-factor"><span class="ic">📊</span>因子分析<span class="badge">待建</span></a>
+      <a class="nav-item" data-target="sec-kb"><span class="ic">📚</span>研究知识库<span class="badge">新</span></a>
       <div class="nav-section">常用工具</div>
       <a class="nav-item" data-href="https://www.cls.cn/telegraph"><span class="ic">⚡</span>财联社电报</a>
       <a class="nav-item" data-href="https://quote.eastmoney.com/center/gridlist.html"><span class="ic">📈</span>东方财富行情</a>
@@ -842,6 +853,58 @@
         </div>
       </section>
 
+      <!-- ===================== 四、研究知识库 ===================== -->
+      <section class="section" id="sec-kb">
+        <div class="section-head">
+          <h2>研究知识库</h2>
+          <span class="desc">研报/对话/文件作为专属知识 · 点评与问答引用证据</span>
+          <span class="bar"></span>
+        </div>
+
+        <div class="tabs" data-tabs="kb">
+          <div class="tab active" data-tab="opinions">观点库</div>
+          <div class="tab" data-tab="search">证据检索</div>
+          <div class="tab" data-tab="quote">问答引用</div>
+        </div>
+
+        <!-- 观点库 -->
+        <div class="tab-pane active" data-pane="opinions">
+          <div style="margin-bottom:14px;font-size:11px;color:var(--ink-3)">
+            观点数:<span id="kbOpinionCount">—</span> · 更新时间:<span id="kbUpdated">—</span> · 数据来自 <code>opinions.json</code>
+          </div>
+          <div class="grid" id="kbOpinionGrid"></div>
+        </div>
+
+        <!-- 证据检索 -->
+        <div class="tab-pane" data-pane="search">
+          <div class="search-box" style="max-width:680px;margin-bottom:18px;padding:10px 16px">
+            <span class="icon">🔎</span>
+            <input id="kbSearchInput" type="text" placeholder="输入关键词,如「加息」「碳化硅」「新能源车」实时检索证据…" />
+          </div>
+          <div class="grid" id="kbSearchGrid"></div>
+        </div>
+
+        <!-- 问答引用 -->
+        <div class="tab-pane" data-pane="quote">
+          <div class="search-box" style="max-width:680px;margin-bottom:14px;padding:10px 16px">
+            <span class="icon">💬</span>
+            <input id="kbQuestionInput" type="text" placeholder="输入你的研究问题,如「美联储9月会加息吗?」「光模块还有多少空间?」" />
+            <button id="kbAskBtn" style="border:0;background:var(--accent);color:#fff;padding:6px 14px;border-radius:8px;cursor:pointer;font-size:13px">检索证据</button>
+          </div>
+          <div class="note" style="margin-bottom:14px">
+            <b>使用方式:</b>输入问题 → 自动分词检索观点库 → 返回最相关的 Top 5 证据 → 一键复制为引用格式,粘贴到你的点评/日报中。
+          </div>
+          <div class="grid" id="kbAnswerGrid"></div>
+          <div class="quote-out" id="kbQuoteOut" style="display:none">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+              <b style="color:var(--ink)">📋 引用格式(可粘贴)</b>
+              <button id="kbCopyBtn" class="kb-copy">复制</button>
+            </div>
+            <pre id="kbQuoteText" style="margin:0;white-space:pre-wrap;font-size:12.5px;color:var(--ink-2);line-height:1.7;font-family:inherit;max-height:280px;overflow:auto"></pre>
+          </div>
+        </div>
+      </section>
+
     </main>
   </div>
 </div>
@@ -1011,6 +1074,161 @@
         document.getElementById('trackerUpdated').textContent='加载失败';
         grid.innerHTML='<div class="placeholder" style="grid-column:1/-1"><div class="big">⚠️</div><h3>数据加载失败</h3><p>本地双击 HTML 不支持 fetch,请部署到 Netlify 后访问。或本地运行 <code>python -m http.server 8000</code> 后访问 http://localhost:8000/</p></div>';
       });
+  })();
+
+  /* ========== 研究知识库 · 加载 opinions.json + 检索 + 引用 ========== */
+  (function(){
+    var OPINIONS=[];
+    var opinionGrid=document.getElementById('kbOpinionGrid');
+    var searchGrid=document.getElementById('kbSearchGrid');
+    var answerGrid=document.getElementById('kbAnswerGrid');
+    var quoteOut=document.getElementById('kbQuoteOut');
+    var quoteText=document.getElementById('kbQuoteText');
+
+    function escapeHtml(s){return (s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+
+    function opinionCard(o, score){
+      var tags=(o.tags||[]).map(function(t){return '<span class="tag">'+escapeHtml(t)+'</span>';}).join('');
+      var industries=(o.industries||[]).map(function(t){return '<span class="tag-bull">'+escapeHtml(t)+'</span>';}).join('');
+      var src=o.sourceUrl?'<a href="'+escapeHtml(o.sourceUrl)+'" target="_blank" rel="noopener">'+escapeHtml(o.source||'来源')+'</a>':escapeHtml(o.source||'');
+      var dateStr=o.date?('· '+escapeHtml(o.date)):'';
+      var scoreHtml=score?'<span class="match-score">相关度 '+score+'</span>':'';
+      return '<div class="card opinion-card">'+
+        '<div class="ic">'+(o.category||'观').slice(0,1)+'</div>'+
+        '<div class="body">'+
+          '<div class="title">'+escapeHtml(o.view||o.title||'')+'<span class="tag">'+escapeHtml(o.category||'观点')+'</span>'+scoreHtml+'</div>'+
+          (o.evidence?'<div class="evidence">📖 '+escapeHtml(o.evidence)+'</div>':'')+
+          (industries?'<div class="tags" style="margin-top:8px">'+industries+'</div>':'')+
+          '<div class="source-line"><span>来源:</span>'+src+'<span>·</span><span>'+dateStr+'</span>'+(o.id?'<span>·</span><span>ID '+escapeHtml(o.id)+'</span>':'')+'</div>'+
+        '</div><span class="arrow">↗</span></div>';
+    }
+
+    function renderOpinions(){
+      if(!OPINIONS.length)return;
+      document.getElementById('kbOpinionCount').textContent=OPINIONS.length;
+      document.getElementById('kbUpdated').textContent=OPINIONS._updated||'—';
+      opinionGrid.innerHTML=OPINIONS.map(function(o){return opinionCard(o);}).join('');
+    }
+
+    function tokenize(s){
+      // 简单中文分词:按标点空格切,再切成 2-3 字滑窗
+      if(!s)return [];
+      var tokens=[];
+      var parts=s.replace(/[,\.\?!;:;,。?!;:,、 ""''()（）\[\]【】]/g,' ').split(/\s+/);
+      parts.forEach(function(p){
+        if(p.length<2)return;
+        if(/^[a-zA-Z0-9]+$/.test(p)){tokens.push(p.toLowerCase());return;}
+        for(var i=0;i<p.length;i++){
+          for(var L=2;L<=4&&i+L<=p.length;L++){
+            tokens.push(p.substr(i,L));
+          }
+        }
+      });
+      return tokens;
+    }
+
+    function scoreOpinion(o, qTokens){
+      if(!qTokens.length)return 0;
+      var text=[o.view,o.evidence,o.title||'',(o.tags||[]).join(' '),(o.industries||[]).join(' '),o.source||''].join(' ').toLowerCase();
+      var hits=0;
+      qTokens.forEach(function(t){if(text.indexOf(t.toLowerCase())>=0)hits++;});
+      // 去重 qTokens 计算 hit rate
+      var uniq={};qTokens.forEach(function(t){uniq[t]=1;});
+      var uniqLen=Object.keys(uniq).length;
+      return uniqLen?Math.round(hits/uniqLen*100):0;
+    }
+
+    function renderSearch(query){
+      if(!OPINIONS.length)return;
+      var qTokens=tokenize(query);
+      if(!qTokens.length){
+        searchGrid.innerHTML='<div class="placeholder" style="grid-column:1/-1"><div class="big">🔍</div><h3>请在上方输入关键词</h3><p>支持多关键词组合检索,如「加息 美债」「碳化硅 国产」「新能源 锂电」</p></div>';
+        return;
+      }
+      var scored=OPINIONS.map(function(o){
+        return {o:o, s:scoreOpinion(o,qTokens)};
+      }).filter(function(x){return x.s>0;})
+        .sort(function(a,b){return b.s-a.s;})
+        .slice(0,12);
+      if(!scored.length){
+        searchGrid.innerHTML='<div class="placeholder" style="grid-column:1/-1"><div class="big">📭</div><h3>未找到匹配证据</h3><p>当前关键词在观点库里没有命中,试试同义词或扩充关键词。</p></div>';
+        return;
+      }
+      searchGrid.innerHTML=scored.map(function(x){return opinionCard(x.o, x.s);}).join('');
+    }
+
+    function renderAnswer(query){
+      if(!OPINIONS.length||!query.trim())return;
+      var qTokens=tokenize(query);
+      var scored=OPINIONS.map(function(o){
+        return {o:o, s:scoreOpinion(o,qTokens)};
+      }).filter(function(x){return x.s>0;})
+        .sort(function(a,b){return b.s-a.s;})
+        .slice(0,5);
+      if(!scored.length){
+        answerGrid.innerHTML='<div class="placeholder" style="grid-column:1/-1"><div class="big">🤔</div><h3>观点库中无相关证据</h3><p>问题未命中已有观点。可扩充 opinions.json 后再试,或换一种表述。</p></div>';
+        quoteOut.style.display='none';
+        return;
+      }
+      answerGrid.innerHTML=scored.map(function(x){return opinionCard(x.o, x.s);}).join('');
+      // 生成引用格式
+      var lines=['【研究问题】'+query,'','【引用证据 Top '+scored.length+'】'];
+      scored.forEach(function(x,i){
+        var o=x.o;
+        lines.push((i+1)+'. '+o.view);
+        if(o.evidence)lines.push('   证据: '+o.evidence);
+        lines.push('   来源: '+(o.source||'')+(o.date?' ('+o.date+')':'')+(o.sourceUrl?' '+o.sourceUrl:''));
+        lines.push('   相关度: '+x.s+'%');
+        lines.push('');
+      });
+      lines.push('【使用建议】');
+      lines.push('以上证据仅供参考,建议结合原始材料完整阅读后再做判断。');
+      quoteText.textContent=lines.join('\n');
+      quoteOut.style.display='block';
+    }
+
+    fetch('opinions.json',{cache:'no-cache'})
+      .then(function(r){return r.json();})
+      .then(function(d){
+        if(!d||!d.opinions||!d.opinions.length){
+          opinionGrid.innerHTML='<div class="placeholder" style="grid-column:1/-1"><div class="big">📂</div><h3>暂无观点</h3><p>请准备 <code>opinions.json</code> 后部署到 Netlify。</p></div>';
+          return;
+        }
+        OPINIONS=d.opinions;
+        OPINIONS._updated=d.updated||'—';
+        renderOpinions();
+        // 初始化检索区为提示
+        searchGrid.innerHTML='<div class="placeholder" style="grid-column:1/-1"><div class="big">🔍</div><h3>关键词证据检索</h3><p>在上方输入框输入关键词,实时返回观点库里匹配的证据。</p></div>';
+        answerGrid.innerHTML='<div class="placeholder" style="grid-column:1/-1"><div class="big">💬</div><h3>问答引用</h3><p>输入研究问题,自动检索最相关的 Top 5 证据,并生成可复制的引用格式。</p></div>';
+      })
+      .catch(function(){
+        opinionGrid.innerHTML='<div class="placeholder" style="grid-column:1/-1"><div class="big">⚠️</div><h3>opinions.json 加载失败</h3><p>需通过 http(s) 访问。请部署到 Netlify 或本地起 <code>python -m http.server 8000</code>。</p></div>';
+      });
+
+    // 事件绑定
+    var searchInput=document.getElementById('kbSearchInput');
+    var searchTimer=null;
+    searchInput.addEventListener('input',function(){
+      clearTimeout(searchTimer);
+      var v=searchInput.value;
+      searchTimer=setTimeout(function(){renderSearch(v);},200);
+    });
+    var qInput=document.getElementById('kbQuestionInput');
+    var askBtn=document.getElementById('kbAskBtn');
+    function doAsk(){renderAnswer(qInput.value);qInput.value='';}
+    askBtn.addEventListener('click',doAsk);
+    qInput.addEventListener('keydown',function(e){if(e.key==='Enter')doAsk();});
+    document.getElementById('kbCopyBtn').addEventListener('click',function(){
+      if(!quoteText.textContent)return;
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(quoteText.textContent).then(function(){flashCopy();});
+      }else{
+        var ta=document.createElement('textarea');ta.value=quoteText.textContent;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy');flashCopy();}catch(e){}
+        document.body.removeChild(ta);
+      }
+    });
+    function flashCopy(){var b=document.getElementById('kbCopyBtn');var t=b.textContent;b.textContent='已复制 ✓';b.style.background='var(--accent)';b.style.color='#fff';setTimeout(function(){b.textContent=t;b.style.background='';b.style.color='';},1500);}
   })();
 })();
 </script>
