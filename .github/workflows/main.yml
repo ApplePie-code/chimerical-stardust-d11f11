@@ -1,0 +1,41 @@
+name: Daily Refresh
+
+on:
+  schedule:
+    - cron: '0 23 * * 1-6'   # UTC 23:00 = 北京时间 07:00,周一到周六
+  workflow_dispatch:           # 支持手动一键触发
+
+permissions:
+  contents: write              # 允许 workflow 自动 commit + push
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install jieba
+
+      - name: Run tracker (产业主体追踪)
+        run: python tracker.py
+
+      - name: Run daily_refresh (日期+成交额+updated)
+        run: python daily_refresh.py
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add beta.json opinions.json index.html
+          if git diff --staged --quiet; then
+            echo "No changes, skip."
+          else
+            git commit -m "auto: daily refresh $(date -u +'%Y-%m-%d')"
+            git push
+          fi
