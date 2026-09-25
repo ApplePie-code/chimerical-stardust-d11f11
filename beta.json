@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24 23:15:18",
+  "updated": "2026-09-25 23:15:00",
   "source": "东方财富研报中心",
   "totalReports": 600,
   "items": [
@@ -101,19 +101,11 @@
     },
     {
       "keyword": "储能",
-      "count": 10,
+      "count": 9,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=jHM5uAxCWl28RoOaT5SRypW23FX2wQGoWlgpF+buvVM=",
       "sampleTitle": "环保行业跟踪周报：亿纬锂能获全球单笔最大储能订单支撑【紫金龙净】新增量；中建国际获香港二期项目"
-    },
-    {
-      "keyword": "锂电",
-      "count": 9,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=FBW2kTXi8dycEdW9Ckk/ZD000qZAHU5SvhBvwB3St24=",
-      "sampleTitle": "电力设备行业跟踪周报：锂电储能估值低位、AIDC及材料空间可期"
     },
     {
       "keyword": "半导体设备",
@@ -124,20 +116,28 @@
       "sampleTitle": "电子行业跟踪报告：MLCC龙头释放扩产信号，半导体设备零部件交期延长"
     },
     {
+      "keyword": "锂电",
+      "count": 8,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=FBW2kTXi8dycEdW9Ckk/ZD000qZAHU5SvhBvwB3St24=",
+      "sampleTitle": "电力设备行业跟踪周报：锂电储能估值低位、AIDC及材料空间可期"
+    },
+    {
+      "keyword": "保险",
+      "count": 8,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=WXCGaDxnxR0ezHKvl3R6UpsjBKV012/3IQmsOQJu9q8=",
+      "sampleTitle": "保险Ⅱ行业点评报告：内地险资获准投资港股通ETF，利好险资灵活配置与两地市场互通"
+    },
+    {
       "keyword": "券商",
       "count": 8,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=oDF5r8GuLPlrGCOTzPHaq2lyXaJaHB70FTYTCk4AQSU=",
       "sampleTitle": "证券Ⅱ：标普上修中资券商行业评级，影响可能不止融资成本下行"
-    },
-    {
-      "keyword": "保险",
-      "count": 7,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=oDF5r8GuLPlrGCOTzPHaqwCPsb4BxXq3U1IS0wGRg8E=",
-      "sampleTitle": "寻找中国保险股的Alpha系列之七：险资另类投资图谱——模式篇"
     },
     {
       "keyword": "数据中心",
