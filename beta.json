@@ -1,11 +1,11 @@
 {
-  "updated": "2026-10-01 23:14:43",
+  "updated": "2026-10-02 23:14:27",
   "source": "东方财富研报中心",
   "totalReports": 600,
   "items": [
     {
       "keyword": "医药",
-      "count": 31,
+      "count": 29,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=YEsPvZM+IXA/Y3oQ4t18ZjXrqFBzTuY3cPf5tog15sU=",
@@ -20,20 +20,20 @@
       "sampleTitle": "电子：AI驱动通信解决方案业务高速增长，安费诺业绩快速增长"
     },
     {
+      "keyword": "机器人",
+      "count": 18,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aStY62cUVKyBqbK2f87x0BabNIsnK3qoxDkoNU88RNg=",
+      "sampleTitle": "中国四足机器人商业化研究报告"
+    },
+    {
       "keyword": "银行",
-      "count": 20,
+      "count": 18,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=YEsPvZM+IXA/Y3oQ4t18ZpIeniLpV+22aLYP46RsTI4=",
       "sampleTitle": "银行行业简评：财政分担融资成本，结构性工具提升投放动力"
-    },
-    {
-      "keyword": "机器人",
-      "count": 17,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=6H4k+j1WjfhUCR00HnRmt50darzCi6mMa6tXbehs24Y=",
-      "sampleTitle": "人形机器人周报：宇树科技发布Dex5-S灵巧手，杰克科技签约2000台人形机器人"
     },
     {
       "keyword": "有色金属",
@@ -48,12 +48,12 @@
       "count": 17,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=YEsPvZM+IXA/Y3oQ4t18ZrUcsNCvRx1Ow2KNaNKgGoY=",
-      "sampleTitle": "工程机械行业跟踪点评：8月挖机出口同比维持高增"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aStY62cUVKyBqbK2f87x0H7ldlKcjUZ8UJgS5KxE9Ow=",
+      "sampleTitle": "机械行业：齿轮齿条式升降锁紧系统指南2026"
     },
     {
       "keyword": "半导体",
-      "count": 15,
+      "count": 14,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=6H4k+j1WjfhUCR00HnRmt0DTzSx2Xcer6fospNvVtZg=",
@@ -61,11 +61,11 @@
     },
     {
       "keyword": "化工",
-      "count": 12,
+      "count": 13,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=9oa6K+XdosbkEUs2CejVca00i+N6hz3FfKd2Ux+HupU=",
-      "sampleTitle": "煤化工行业月度报告：8月：板块分化延续，旺季驱动可期"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aStY62cUVKyBqbK2f87x0FUfNQmkH8yzqJpHDU9myL4=",
+      "sampleTitle": "2026年下半年化工行业前瞻：景气温和修复，信用分化延续（下篇）——行业景气度微观分析"
     },
     {
       "keyword": "数据中心",
@@ -74,14 +74,6 @@
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=YEsPvZM+IXA/Y3oQ4t18ZitWBt+CbvrPP0FvhFU5jHU=",
       "sampleTitle": "轨道数据中心的政策考量"
-    },
-    {
-      "keyword": "创新药",
-      "count": 9,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=/UP/gYXm9i8m/GPRkSi8sUsCNyBBWFWvSc1geGm8a4M=",
-      "sampleTitle": "医药健康行业研究：28项LBA入选ESMO大会，中国创新药站上国际核心学术舞台"
     },
     {
       "keyword": "煤炭",
@@ -101,7 +93,7 @@
     },
     {
       "keyword": "创新药",
-      "count": 9,
+      "count": 8,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=/UP/gYXm9i8m/GPRkSi8sUsCNyBBWFWvSc1geGm8a4M=",
@@ -114,6 +106,14 @@
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=6H4k+j1WjfhUCR00HnRmt7L7YHmuq1eeAV4NmZVyUA8=",
       "sampleTitle": "保险Ⅱ：险资跨境通道制度扩容政策影响测算-险资跨境投资通道渐次放开"
+    },
+    {
+      "keyword": "创新药",
+      "count": 8,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=/UP/gYXm9i8m/GPRkSi8sUsCNyBBWFWvSc1geGm8a4M=",
+      "sampleTitle": "医药健康行业研究：28项LBA入选ESMO大会，中国创新药站上国际核心学术舞台"
     },
     {
       "keyword": "储能",
@@ -146,6 +146,14 @@
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=YEsPvZM+IXA/Y3oQ4t18Zi42SkbDVKOddRG1+OTvfZs=",
       "sampleTitle": "国际商会负责任酒精营销传播框架 2026版"
+    },
+    {
+      "keyword": "军工",
+      "count": 6,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aStY62cUVKyBqbK2f87x0HLMyp5HejsvjoOIfb/uIHM=",
+      "sampleTitle": "国防军工行业周度观察"
     },
     {
       "keyword": "PCB",
@@ -188,14 +196,6 @@
       "sampleTitle": "工程机械行业跟踪点评：8月挖机出口同比维持高增"
     },
     {
-      "keyword": "军工",
-      "count": 4,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=oDF5r8GuLPlrGCOTzPHaq0Ru4fLyxKX1kr/LI96zNEA=",
-      "sampleTitle": "军工行业周报：民营航天大规模组网能力得到验证"
-    },
-    {
       "keyword": "半导体设备",
       "count": 3,
       "trend": "rising",
@@ -220,6 +220,14 @@
       "sampleTitle": "电力设备与新能源行业9月第5周周报：9月上旬新能源车零售偏弱，风光装机稳步增长"
     },
     {
+      "keyword": "船舶",
+      "count": 3,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aStY62cUVKyBqbK2f87x0CO4JUHddIzIWavtcbHSUFw=",
+      "sampleTitle": "船舶行业：基于粘流的船舶非线性波浪载荷计算指南2026"
+    },
+    {
       "keyword": "光模块",
       "count": 2,
       "trend": "rising",
@@ -234,14 +242,6 @@
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=YEsPvZM+IXA/Y3oQ4t18Zmoy690U2/xklyja5gh8AH8=",
       "sampleTitle": "电力设备及新能源：商用车快速电动化+海外市场增长突出，重视动力电池需求韧性"
-    },
-    {
-      "keyword": "锂电",
-      "count": 2,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=/UP/gYXm9i8m/GPRkSi8sanAwPFeGmaau0uMAhgzpYA=",
-      "sampleTitle": "电力设备行业跟踪周报：AIDC及材料空间可期、锂电储能估值低位"
     }
   ]
 }
