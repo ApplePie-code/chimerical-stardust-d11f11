@@ -1,31 +1,23 @@
 {
-  "updated": "2026-10-02 23:14:27",
+  "updated": "2026-10-04 02:59:42",
   "source": "东方财富研报中心",
   "totalReports": 600,
   "items": [
     {
       "keyword": "医药",
-      "count": 29,
+      "count": 30,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=YEsPvZM+IXA/Y3oQ4t18ZjXrqFBzTuY3cPf5tog15sU=",
-      "sampleTitle": "生物医药：AI科技有望推动医药行业快速发展，重点关注AI制药板块"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=5Dz/th2bLISvyUOGA5cZYEeWiQ7VO6p7irt2LZcgIKY=",
+      "sampleTitle": "医药行业产业研究周报：Claude发现酶系统，FDA新规推进动物试验替代方案"
     },
     {
       "keyword": "通信",
-      "count": 24,
+      "count": 23,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=YEsPvZM+IXA/Y3oQ4t18Znv9+BXq0PhGKCvXjWfsDYo=",
       "sampleTitle": "电子：AI驱动通信解决方案业务高速增长，安费诺业绩快速增长"
-    },
-    {
-      "keyword": "机器人",
-      "count": 18,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aStY62cUVKyBqbK2f87x0BabNIsnK3qoxDkoNU88RNg=",
-      "sampleTitle": "中国四足机器人商业化研究报告"
     },
     {
       "keyword": "银行",
@@ -36,12 +28,20 @@
       "sampleTitle": "银行行业简评：财政分担融资成本，结构性工具提升投放动力"
     },
     {
+      "keyword": "机器人",
+      "count": 17,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aStY62cUVKyBqbK2f87x0BabNIsnK3qoxDkoNU88RNg=",
+      "sampleTitle": "中国四足机器人商业化研究报告"
+    },
+    {
       "keyword": "有色金属",
       "count": 17,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=YEsPvZM+IXA/Y3oQ4t18ZnUv3V9chc5o8ksdZ0DPxSY=",
-      "sampleTitle": "有色金属行业周报：宏观压制与基本面支撑博弈，金属板块震荡分化"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aStY62cUVKyBqbK2f87x0HNwrHKLrjZLO2hiEpqLu5A=",
+      "sampleTitle": "有色金属行业双周报：钼精矿价格趋稳，钴锂持续调整"
     },
     {
       "keyword": "机械",
@@ -84,20 +84,20 @@
       "sampleTitle": "煤炭行业周报：冬储补库预期升温，动力煤港口价再度上行"
     },
     {
-      "keyword": "证券",
-      "count": 9,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=9oa6K+XdosbkEUs2CejVcQODBoI5nPF5nUF6oQX1MjE=",
-      "sampleTitle": "证券行业报告：流动性低位平稳运行，板块估值相对优势依然明显"
-    },
-    {
       "keyword": "创新药",
       "count": 8,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=/UP/gYXm9i8m/GPRkSi8sUsCNyBBWFWvSc1geGm8a4M=",
       "sampleTitle": "医药健康行业研究：28项LBA入选ESMO大会，中国创新药站上国际核心学术舞台"
+    },
+    {
+      "keyword": "证券",
+      "count": 8,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=9oa6K+XdosbkEUs2CejVcQODBoI5nPF5nUF6oQX1MjE=",
+      "sampleTitle": "证券行业报告：流动性低位平稳运行，板块估值相对优势依然明显"
     },
     {
       "keyword": "保险",
@@ -117,11 +117,11 @@
     },
     {
       "keyword": "储能",
-      "count": 6,
+      "count": 7,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=6H4k+j1WjfhUCR00HnRmtzR56TxpXzhsiEDHykEcdus=",
-      "sampleTitle": "电力设备及新能源：重视后续储能政策合力，预期有望修复"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aStY62cUVKyBqbK2f87x0FeXawQt4SYMTma/p/zObvs=",
+      "sampleTitle": "新能源+AI展望（第11期）：AIDC供电架构加速变革，储能升级为核心基础设施"
     },
     {
       "keyword": "券商",
