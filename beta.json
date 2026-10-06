@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05 23:15:35",
+  "updated": "2026-10-06 23:16:00",
   "source": "东方财富研报中心",
   "totalReports": 600,
   "items": [
@@ -20,20 +20,20 @@
       "sampleTitle": "电子：AI驱动通信解决方案业务高速增长，安费诺业绩快速增长"
     },
     {
+      "keyword": "有色金属",
+      "count": 18,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=0BDkVTleKkq7WvcH6ksRM4ID5GCe2o9wzxodQ8E+yWU=",
+      "sampleTitle": "有色金属行业跟踪周报：美元指数强势，金属价格震荡"
+    },
+    {
       "keyword": "机器人",
       "count": 17,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aStY62cUVKyBqbK2f87x0BabNIsnK3qoxDkoNU88RNg=",
       "sampleTitle": "中国四足机器人商业化研究报告"
-    },
-    {
-      "keyword": "有色金属",
-      "count": 17,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aStY62cUVKyBqbK2f87x0HNwrHKLrjZLO2hiEpqLu5A=",
-      "sampleTitle": "有色金属行业双周报：钼精矿价格趋稳，钴锂持续调整"
     },
     {
       "keyword": "银行",
