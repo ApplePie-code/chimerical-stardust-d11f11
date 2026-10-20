@@ -1,159 +1,159 @@
 {
-  "updated": "2026-10-17 01:13:33",
+  "updated": "2026-10-20 01:40:41",
   "source": "东方财富研报中心",
   "totalReports": 600,
   "items": [
     {
       "keyword": "医药",
-      "count": 24,
+      "count": 28,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=UaueAsh2gjRECMocJfjyJlo9rG4X+wgHeqXtMd+cFyU=",
-      "sampleTitle": "医药生物行业周报（26年第41周）：ESMO会议即将召开，建议关注创新药及产业链"
-    },
-    {
-      "keyword": "银行",
-      "count": 22,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=qIaat8gz0tePds+0gmzoKGXEhZfinX4j09JGofn8lts=",
-      "sampleTitle": "银行9月金融数据点评：政府债发行提速，关注政策工具落地成效"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkU1mG7VhVNgar9xoROzmu2P8=",
+      "sampleTitle": "医药生物行业-再谈AI4S：分子设计并非终点，“靶点-疾病”因果数据仍存在巨大缺口，AI+生物数据基建或许刚刚开始"
     },
     {
       "keyword": "有色金属",
-      "count": 17,
+      "count": 24,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=qIaat8gz0tePds+0gmzoKDi0+77hc78niTtLJkTnxRg=",
-      "sampleTitle": "有色金属行业日报：通胀韧性较强压制金价，等待反弹信号"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=1IxELJqHobtiKusKwOp2/ydHMWKXSn6jkimWhvPxeRM=",
+      "sampleTitle": "有色金属行业周报：美元加息预期重燃，金属价格共振回调"
+    },
+    {
+      "keyword": "银行",
+      "count": 24,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkU3o0Teelx79Cu9aCs00p3J0=",
+      "sampleTitle": "2026年9月银行理财市场月报：理财信披新规正式施行，指数化和品牌化布局提速"
     },
     {
       "keyword": "机械",
-      "count": 17,
+      "count": 21,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=qIaat8gz0tePds+0gmzoKMkQfCbY7MgRhPrlDt1KZcw=",
-      "sampleTitle": "工程机械月报：9月挖机内销提速、出口延续高增，装载机内外销同步正增长"
-    },
-    {
-      "keyword": "机器人",
-      "count": 16,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=C1IHvvAXQEBkUczE4K4FIskwepk7SSn3HvZCzdzO/5E=",
-      "sampleTitle": "2025年中国水下机器人行业概览：167亿到637亿的五年跃迁，CAGR 25%，深海科技崛起撬动万亿市场"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkU6W7w3FqT7Px5+93AsVcRzY=",
+      "sampleTitle": "机械设备行业周报：关注工程机械、人形机器人及核聚变等板块"
     },
     {
       "keyword": "通信",
-      "count": 16,
+      "count": 15,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=C1IHvvAXQEBkUczE4K4FIgMu1C3ArdPW5jj/R9PkkOo=",
-      "sampleTitle": "通信行业周报：全球太空竞赛有望加速，关注商业航天产业链机会"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=1IxELJqHobtiKusKwOp2/8AAthOSrMWBPb9eQcOrk5Q=",
+      "sampleTitle": "通信行业周报：OCP峰会引领光互联架构升级"
+    },
+    {
+      "keyword": "机器人",
+      "count": 14,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkU6W7w3FqT7Px5+93AsVcRzY=",
+      "sampleTitle": "机械设备行业周报：关注工程机械、人形机器人及核聚变等板块"
     },
     {
       "keyword": "化工",
-      "count": 12,
+      "count": 14,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=UaueAsh2gjRECMocJfjyJv28aPq3JDIBvDXi8bWhcHM=",
-      "sampleTitle": "化工行业2026年中报综述：全行业归母净利润大幅增长，盈利能力提升"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkU7OIb1obL4kD975StZjx5OY=",
+      "sampleTitle": "化工行业周报：国际原油、二氯甲烷价格上涨，甲醇价格下跌"
     },
     {
       "keyword": "半导体",
-      "count": 10,
+      "count": 11,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=qIaat8gz0tePds+0gmzoKN/MXWglLW3RiyuWUwEH1JI=",
-      "sampleTitle": "半导体封装测试行业跟踪（一）：涨价驱动Q3盈利向上，先进封装扩产提速"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=1IxELJqHobtiKusKwOp2/ypRjVjFrltjkA8k/4BKcLQ=",
+      "sampleTitle": "半导体与半导体生产设备行业周报：电子板块普遍回调，存储与AI互连产业链仍具景气支撑"
+    },
+    {
+      "keyword": "工程机械",
+      "count": 11,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkU6W7w3FqT7Px5+93AsVcRzY=",
+      "sampleTitle": "机械设备行业周报：关注工程机械、人形机器人及核聚变等板块"
+    },
+    {
+      "keyword": "保险",
+      "count": 9,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkUyiMkP1/ktmR2dOwKE2sXyo=",
+      "sampleTitle": "保险业态观察（十七）：“快返型”产品开启排查整改，改善长期负债结构和投资配置稳定性"
+    },
+    {
+      "keyword": "PCB",
+      "count": 8,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkU1hS/4yolQH5nWtyQ2G4yN0=",
+      "sampleTitle": "PCB行业2026三季报预告点评：高端产品放量提速，盈利弹性持续释放"
+    },
+    {
+      "keyword": "煤炭",
+      "count": 8,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkU1DHEF2wecp6qtkepeYQsyg=",
+      "sampleTitle": "煤炭行业周报：煤价普涨库存回落，关注煤矿复产进度"
+    },
+    {
+      "keyword": "证券",
+      "count": 8,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkU+FMUbSs1VZEA93Jy/dgA1w=",
+      "sampleTitle": "证券Ⅱ行业跟踪报告：三季报披露窗口来临，北交所做市商扩容"
     },
     {
       "keyword": "储能",
       "count": 7,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=qIaat8gz0tePds+0gmzoKFdJBCMozgV1SsmD6efu3fY=",
-      "sampleTitle": "能量新基座——多维需求共振下电化学储能的产业化突破与场景纵深拓展 头豹词条报告系列"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=AluLlyeMRIcOi/WphoziWsNPFRy7oNxOXaPcLl/CBQY=",
+      "sampleTitle": "氢能、核能及储能项目建设的采购策略"
     },
     {
-      "keyword": "煤炭",
+      "keyword": "锂电",
       "count": 7,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=UaueAsh2gjRECMocJfjyJmBDrTSxwt3Zy+gKnoui6Ww=",
-      "sampleTitle": "煤炭行业周报：动力煤价突破千元，炼焦煤价高位回落"
-    },
-    {
-      "keyword": "工程机械",
-      "count": 7,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=qIaat8gz0tePds+0gmzoKMkQfCbY7MgRhPrlDt1KZcw=",
-      "sampleTitle": "工程机械月报：9月挖机内销提速、出口延续高增，装载机内外销同步正增长"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkUwINF4gJD/7ljFQDSyo3SQI=",
+      "sampleTitle": "电力设备行业周报：锂电前三季度优质公司盈利超预期，风能展释放“十五五”高质量发展信号"
     },
     {
       "keyword": "数据中心",
       "count": 6,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=qIaat8gz0tePds+0gmzoKO2Gsy6iezUoIb3vBiKnsbk=",
-      "sampleTitle": "新型基建之互联网数据中心行业信用展望：AI算力驱动下行业整体规模逐步扩张，分化或将加剧"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=mCHRs83kHlNAPG8pK+y8FuRI+jMc9sr7HnpSZYrtLO0=",
+      "sampleTitle": "吉瓦级数据中心DC 800V供配电研究报告"
     },
     {
-      "keyword": "锂电",
+      "keyword": "券商",
       "count": 6,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=UaueAsh2gjRECMocJfjyJu3/7AO72ys+aV9kjlHhzpk=",
-      "sampleTitle": "锂电10月洞察：旺季排产高景气延续，十五五促新技术发展"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=AluLlyeMRIcOi/WphoziWlZUA5pmerE3hFOhRNEpoYE=",
+      "sampleTitle": "非银金融行业周报：券商板块超额收益显现，关注政策面催化和成长逻辑"
+    },
+    {
+      "keyword": "影视",
+      "count": 6,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=AluLlyeMRIcOi/WphoziWvFKlk3yvk1OQgMQd8CxZc4=",
+      "sampleTitle": "互联网行业研究：AI影视产业趋势向好，持续看好"
     },
     {
       "keyword": "白酒",
-      "count": 6,
+      "count": 5,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=u+hFn/HeA19biG2f4qKIeCCDa/YIjm2dQP0p99ZPfrQ=",
       "sampleTitle": "食品饮料行业研究周报：白酒双节动销分化，安井部分产品涨价"
-    },
-    {
-      "keyword": "证券",
-      "count": 6,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=UaueAsh2gjRECMocJfjyJgHC3TjLL5Nzm/Z611AUYXU=",
-      "sampleTitle": "证券Ⅱ行业跟踪报告：政策面持续释放积极信号，估值低位配置性价比高"
-    },
-    {
-      "keyword": "营销",
-      "count": 6,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=UaueAsh2gjRECMocJfjyJnDoAe/y4/8WyMHZ7Uxg2b4=",
-      "sampleTitle": "传媒行业2026年Q4投资策略：Agent迭代成熟，看好AI影视和AI营销"
-    },
-    {
-      "keyword": "PCB",
-      "count": 5,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=oQPcD64+WhYFn+gbbhKQJDQx/BMv1m9iP8rVLcvPSQA=",
-      "sampleTitle": "电子行业双周报：PCB Q3业绩预告亮眼"
-    },
-    {
-      "keyword": "黄金",
-      "count": 5,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=UaueAsh2gjRECMocJfjyJtNd7uCQiAXcv8hfc309UVg=",
-      "sampleTitle": "从小众极限运动到大众记录工具：运动相机迎来黄金时代"
-    },
-    {
-      "keyword": "保险",
-      "count": 5,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=u+hFn/HeA19biG2f4qKIeAkxEzalkVgtO0hut8sgRhw=",
-      "sampleTitle": "中国互联网保险消费者五年回顾与洞察：2021~2025·五周年汇编版"
     },
     {
       "keyword": "游戏",
@@ -164,28 +164,28 @@
       "sampleTitle": "传媒行业跟踪报告：9月209款游戏版号获批，8月中国游戏产业延续稳健增长态势"
     },
     {
-      "keyword": "影视",
-      "count": 5,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=UaueAsh2gjRECMocJfjyJmTS4L+PFha544rt7/1wqyU=",
-      "sampleTitle": "影视行业：2026Q3长剧集网播表现与上新观察"
-    },
-    {
-      "keyword": "家电",
+      "keyword": "先进封装",
       "count": 4,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aImpBXurQHajC5g2RJdWrhMhL5agt3hy527hVPJPHsA=",
-      "sampleTitle": "家电行业研究：TV面板报价上调，MNT价格维持稳定"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkU5qlnOYlO+jJE88e/K4vmXk=",
+      "sampleTitle": "计算机行业周报-服务器上游系列（一）：先进封装破局后摩尔时代，玻璃基板进入量产前夕"
     },
     {
-      "keyword": "券商",
+      "keyword": "CXO",
       "count": 4,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aImpBXurQHajC5g2RJdWrh0nsO+OKzaThkYv3gjqMxw=",
-      "sampleTitle": "非银金融行业周报：证监会座谈会释放积极信号，重点看好券商当下超额"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=mCHRs83kHlNAPG8pK+y8FjKR6Ib3glTVsPLf5E79Pz8=",
+      "sampleTitle": "CXO行业2026Q3数据跟踪：AI制药提升估值弹性，地缘风险阶段性缓释"
+    },
+    {
+      "keyword": "黄金",
+      "count": 4,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=UaueAsh2gjRECMocJfjyJtNd7uCQiAXcv8hfc309UVg=",
+      "sampleTitle": "从小众极限运动到大众记录工具：运动相机迎来黄金时代"
     },
     {
       "keyword": "养老",
@@ -196,52 +196,52 @@
       "sampleTitle": "老龄化背景下养老行业发展格局与前景展望"
     },
     {
-      "keyword": "先进封装",
-      "count": 3,
+      "keyword": "军工",
+      "count": 4,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=qIaat8gz0tePds+0gmzoKN/MXWglLW3RiyuWUwEH1JI=",
-      "sampleTitle": "半导体封装测试行业跟踪（一）：涨价驱动Q3盈利向上，先进封装扩产提速"
-    },
-    {
-      "keyword": "创新药",
-      "count": 3,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=UaueAsh2gjRECMocJfjyJlo9rG4X+wgHeqXtMd+cFyU=",
-      "sampleTitle": "医药生物行业周报（26年第41周）：ESMO会议即将召开，建议关注创新药及产业链"
-    },
-    {
-      "keyword": "CXO",
-      "count": 3,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=oQPcD64+WhYFn+gbbhKQJOgVoAX5CKL2b8QUpwRYQOo=",
-      "sampleTitle": "医药生物行业周报：CXO景气延续，AI制药赋能科研上游"
-    },
-    {
-      "keyword": "钢铁",
-      "count": 3,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=qIaat8gz0tePds+0gmzoKIpiG3TfoNeYoquqcRDU/lU=",
-      "sampleTitle": "钢铁行业周报：需求疲弱与成本松动交织，钢价震荡偏弱"
-    },
-    {
-      "keyword": "创新药",
-      "count": 3,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=UaueAsh2gjRECMocJfjyJlo9rG4X+wgHeqXtMd+cFyU=",
-      "sampleTitle": "医药生物行业周报（26年第41周）：ESMO会议即将召开，建议关注创新药及产业链"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=AluLlyeMRIcOi/WphoziWuwuvO8QBhCpr4fUodivJPo=",
+      "sampleTitle": "国防军工行业周度观察"
     },
     {
       "keyword": "船舶",
+      "count": 4,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkU++eI0uysaKjqbyGEMRWnWk=",
+      "sampleTitle": "机械设备行业跟踪周报：看好估值底部的工程机械和船舶；看好半导体设备明年订单和利润高增"
+    },
+    {
+      "keyword": "家电",
       "count": 3,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=aImpBXurQHajC5g2RJdWrgjDIxR4BE0G8VQkfaPFTXw=",
-      "sampleTitle": "机械行业研究：看好船舶、石墨烯导热垫片，关注工程机械"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=AluLlyeMRIcOi/WphoziWnY7x4Q+5z0HoE7hkX7+/Iw=",
+      "sampleTitle": "家电行业周报：9月家电出口提速，美的进入英伟达MGX生态链"
+    },
+    {
+      "keyword": "整车",
+      "count": 3,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkU+qd3wIFWZ6QoKPs0ZpkcmQ=",
+      "sampleTitle": "整车主线周报：新能源汽车出口退税退坡，小鹏MONA L05预售发布会"
+    },
+    {
+      "keyword": "营销",
+      "count": 3,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=UaueAsh2gjRECMocJfjyJnDoAe/y4/8WyMHZ7Uxg2b4=",
+      "sampleTitle": "传媒行业2026年Q4投资策略：Agent迭代成熟，看好AI影视和AI营销"
+    },
+    {
+      "keyword": "光模块",
+      "count": 2,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=oQPcD64+WhYFn+gbbhKQJKDX1H0EBL8JVnt8HS4qapw=",
+      "sampleTitle": "通信行业跟踪报告：FCC26-50新规将落地，光模块存量稳健，国产芯片加速验证"
     }
   ]
 }
