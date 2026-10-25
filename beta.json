@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24 01:28:22",
+  "updated": "2026-10-25 00:59:01",
   "source": "东方财富研报中心",
   "totalReports": 600,
   "items": [
@@ -108,20 +108,20 @@
       "sampleTitle": "电力设备行业跟踪周报：电力设备增长确定性强、锂电储能估值低位"
     },
     {
+      "keyword": "保险",
+      "count": 8,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=5Tw/YDgJq5gzK+euTCCX6ji6AZI5kGl79kOqqYwpEUU=",
+      "sampleTitle": "保险行业9月保费：寿险业务增速拐点向上，产险增长相对偏弱"
+    },
+    {
       "keyword": "白酒",
       "count": 7,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=8OG3OE37RJDFvjo99Jziqq0JIcWb6GLdeeRYBESJQWU=",
       "sampleTitle": "白酒板块10月投资策略暨2026Q3前瞻：双节需求延续磨底，静待内需预期升温"
-    },
-    {
-      "keyword": "保险",
-      "count": 7,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sSrzFU7ZQF7OHytrGVkkUyiMkP1/ktmR2dOwKE2sXyo=",
-      "sampleTitle": "保险业态观察（十七）：“快返型”产品开启排查整改，改善长期负债结构和投资配置稳定性"
     },
     {
       "keyword": "PCB",
