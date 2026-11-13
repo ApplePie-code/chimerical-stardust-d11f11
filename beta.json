@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12 03:43:20",
+  "updated": "2026-11-13 03:21:03",
   "source": "东方财富研报中心",
   "totalReports": 600,
   "items": [
@@ -8,88 +8,72 @@
       "count": 35,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sJkbPU5mOT7uKjaCSsrWfPYrXHJSrWzpIFN03W0vwB4=",
-      "sampleTitle": "海外制药企业2026Q3业绩回顾——美国两党医药政策对比"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=VF/Aff6xS5JKqu72ctdLoBTpOVaCBKm6vfitJgrwUhk=",
+      "sampleTitle": "医药生物行业动态点评：多因素赋能脑机接口产业高速发展，关注技术及商业化落地"
     },
     {
       "keyword": "机器人",
-      "count": 21,
+      "count": 22,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sJkbPU5mOT7uKjaCSsrWfASN3vN1JiA01aOPpOlGwgw=",
-      "sampleTitle": "人形机器人专题点评报告：苹果HALO跑通仿真训练至真实环境泛化链路"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=VF/Aff6xS5JKqu72ctdLoI2s5Z3FEPzAiqtI3/wGEGw=",
+      "sampleTitle": "扫地机器人市场洞察报告：解市场为何降，挖未来机会点"
     },
     {
       "keyword": "有色金属",
-      "count": 19,
+      "count": 20,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp9B+P9ToVMuw3hI7PJMunW8=",
-      "sampleTitle": "有色金属行业点评报告：沃勒打开50基点加息选项，紧缩预期升温金属承压"
-    },
-    {
-      "keyword": "化工",
-      "count": 17,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sJkbPU5mOT7uKjaCSsrWfJg5yKgXyfnkAJeI6C6wR+A=",
-      "sampleTitle": "煤化工行业月度报告：10月：三季报煤化工盈利改善，看好业绩兑现"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=VF/Aff6xS5JKqu72ctdLoNon52eUqvvjNvcpzzKijlU=",
+      "sampleTitle": "有色金属行业周报：铜矿采选行业三季报梳理"
     },
     {
       "keyword": "银行",
-      "count": 17,
+      "count": 20,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp2hfeYSP/LFXGAX3hdvh7+k=",
-      "sampleTitle": "未来银行业情景：对盈利能力、流动性和偿付能力的影响"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp3jlAf7Q+MT3DOVmOEjmJF4=",
+      "sampleTitle": "银行行业点评报告：政府债利息征税情景推演：比价重构与业绩影响"
+    },
+    {
+      "keyword": "化工",
+      "count": 18,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=VF/Aff6xS5JKqu72ctdLoODE1VzBDJJHzBWCg1ApAiI=",
+      "sampleTitle": "基础化工：AI拉动先进封装大尺寸化，玻璃基板加工材料有望验证放量"
     },
     {
       "keyword": "机械",
-      "count": 17,
+      "count": 18,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp4olSi8/IRP3g+1x4ogUnA4=",
-      "sampleTitle": "机械行业周报：工程机械后续看好，核聚变产业进展良好"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp8sYLIDIqyp4Z3hPFzqMqTQ=",
+      "sampleTitle": "机械设备行业2026年三季报业绩综述：收入端加速修复，利润弹性有待兑现"
     },
     {
       "keyword": "通信",
-      "count": 17,
+      "count": 18,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sJkbPU5mOT7uKjaCSsrWfKFiwFL8l2UJF3ECc8FwJ+0=",
-      "sampleTitle": "通信行业周报：力箭二号成功发射，关注商业航天相关机会"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp5fi96rMeG2jM2YzB1kMmM0=",
+      "sampleTitle": "通信行业周报：国内算力网络建设提速，全球光通信产业整合"
     },
     {
       "keyword": "储能",
-      "count": 13,
+      "count": 12,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=OT/cH2N6vX1n5OQJOSceH2KNkPCt/66GK/WjV82JVEM=",
       "sampleTitle": "新能源行业26Q3财务报告总结：储能盈利略有波动、风电节奏放缓、光伏亏损收窄"
     },
     {
-      "keyword": "煤炭",
-      "count": 10,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=OT/cH2N6vX1n5OQJOSceH0Z41ob6A/5Mtch46NFf7uA=",
-      "sampleTitle": "煤炭行业周报：动力煤价止跌企稳，炼焦煤价再度下探"
-    },
-    {
-      "keyword": "证券",
-      "count": 10,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=n/cJEunuqis3YttIYmToerChkkt/ILzTJbJ+91DZDzg=",
-      "sampleTitle": "证券Ⅱ行业跟踪报告：稳市工具走向常态化运用，政策组合拳夯实板块底"
-    },
-    {
       "keyword": "半导体",
       "count": 10,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=OT/cH2N6vX1n5OQJOSceH9X2VjFscwShR1qwX2aFG3A=",
-      "sampleTitle": "半导体与半导体生产设备行业周报：海外AI估值持续承压，国产半导体制造链相对走强"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp/A3p+eW44A9nO1cbN4K7uQ=",
+      "sampleTitle": "AI算力硬件与存储周期共振：2026年中国半导体产业深度洞察——从AI计算价值链到存储结构升级"
     },
     {
       "keyword": "军工",
@@ -100,12 +84,20 @@
       "sampleTitle": "军工行业周报：底部渐明，不妨适度乐观"
     },
     {
-      "keyword": "白酒",
+      "keyword": "煤炭",
       "count": 9,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp1Yz5ihcAEn7qHSstSLC0+A=",
-      "sampleTitle": "食品饮料2026年三季报总结：白酒报表筑底、动销先行，乳制品、速冻显韧性，关注拐点改善/新增长动因企业"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=OT/cH2N6vX1n5OQJOSceH0Z41ob6A/5Mtch46NFf7uA=",
+      "sampleTitle": "煤炭行业周报：动力煤价止跌企稳，炼焦煤价再度下探"
+    },
+    {
+      "keyword": "证券",
+      "count": 9,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp/TJNvwvpPJS5cEkJ3AIho8=",
+      "sampleTitle": "证券行业周报：上周板块强势回升"
     },
     {
       "keyword": "锂电",
@@ -116,8 +108,16 @@
       "sampleTitle": "锂电行业2027年度投资策略：储能及出海共驱增长，把握盈利韧性与新技术红利"
     },
     {
-      "keyword": "创新药",
+      "keyword": "白酒",
       "count": 8,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp1Yz5ihcAEn7qHSstSLC0+A=",
+      "sampleTitle": "食品饮料2026年三季报总结：白酒报表筑底、动销先行，乳制品、速冻显韧性，关注拐点改善/新增长动因企业"
+    },
+    {
+      "keyword": "创新药",
+      "count": 7,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp3S0BQURTLQKnm522MpJ5l4=",
@@ -125,7 +125,7 @@
     },
     {
       "keyword": "保险",
-      "count": 8,
+      "count": 7,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=YkOHHDlnoYAcLJTL+8e3G9GNgNxNhCXqxI3JG7JaGiM=",
@@ -133,7 +133,7 @@
     },
     {
       "keyword": "创新药",
-      "count": 8,
+      "count": 7,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp3S0BQURTLQKnm522MpJ5l4=",
@@ -156,6 +156,14 @@
       "sampleTitle": "医药产业研究周报：从Capex到Eps，增势由AI基建转入上游工具、CXO与IVD"
     },
     {
+      "keyword": "游戏",
+      "count": 6,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=VF/Aff6xS5JKqu72ctdLoDlnfq7aVaiht54/CKkVrJA=",
+      "sampleTitle": "游戏市场深度洞察：PC与主机买断制游戏"
+    },
+    {
       "keyword": "半导体设备",
       "count": 5,
       "trend": "rising",
@@ -172,12 +180,12 @@
       "sampleTitle": "机械设备行业跟踪周报：推荐基本面底部反转的油服设备；建议关注超跌但高景气的PCB设备"
     },
     {
-      "keyword": "液冷",
+      "keyword": "商业航天",
       "count": 5,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=n/cJEunuqis3YttIYmToelNEdEbCvT4TuGcclKHq0OM=",
-      "sampleTitle": "通信行业投资策略：AI算力逐浪：“光、超节点、液冷”三重奏"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp3SzDj+sfK8zCfWJCM96lHA=",
+      "sampleTitle": "通信行业点评报告：卫星互联网低轨29组卫星成功发射，关注商业航天相关投资机会"
     },
     {
       "keyword": "券商",
@@ -188,12 +196,28 @@
       "sampleTitle": "上市券商三季报综述：单季承压检验ROE韧性，继续看好头部券商超额"
     },
     {
-      "keyword": "商业航天",
+      "keyword": "先进封装",
       "count": 4,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sJkbPU5mOT7uKjaCSsrWfKFiwFL8l2UJF3ECc8FwJ+0=",
-      "sampleTitle": "通信行业周报：力箭二号成功发射，关注商业航天相关机会"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=VF/Aff6xS5JKqu72ctdLoODE1VzBDJJHzBWCg1ApAiI=",
+      "sampleTitle": "基础化工：AI拉动先进封装大尺寸化，玻璃基板加工材料有望验证放量"
+    },
+    {
+      "keyword": "液冷",
+      "count": 4,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=n/cJEunuqis3YttIYmToelNEdEbCvT4TuGcclKHq0OM=",
+      "sampleTitle": "通信行业投资策略：AI算力逐浪：“光、超节点、液冷”三重奏"
+    },
+    {
+      "keyword": "黄金",
+      "count": 4,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp4LY1EoffMJJw0yiNF3M8WA=",
+      "sampleTitle": "有色金属行业双周报：黄金价格回升，钨价持续上涨"
     },
     {
       "keyword": "钢铁",
@@ -208,40 +232,16 @@
       "count": 4,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnpxH/tufjCSv/kGXns+oh1u8=",
-      "sampleTitle": "宠物行业：双11营销前瞻洞察"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnpwoH3KDDvH+2zonzwgRNexk=",
+      "sampleTitle": "2026-3C数码行业AIGC内容营销实战指南"
     },
     {
       "keyword": "卫星",
       "count": 4,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=OT/cH2N6vX1n5OQJOSceH6a7K7yR52VdGDGkwmeH/Fw=",
-      "sampleTitle": "卫星化学及烯烃行业周度动态跟踪"
-    },
-    {
-      "keyword": "先进封装",
-      "count": 3,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=n/cJEunuqis3YttIYmToeoP1qkVpKkwM154zzdZlOis=",
-      "sampleTitle": "电子行业跟踪报告：上海微电子新一代光刻机亮相，日月光拟扩大先进封装产能"
-    },
-    {
-      "keyword": "家电",
-      "count": 3,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=sJkbPU5mOT7uKjaCSsrWfKnRILHBZ0r0q65U2FKuz1E=",
-      "sampleTitle": "家电行业2026Q4投资策略：基数效应迎来拐点，防御属性开始凸显"
-    },
-    {
-      "keyword": "影视",
-      "count": 3,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp+JS3AUF4zM7k4xm1RPPmYo=",
-      "sampleTitle": "智能科技行业10月报：板块普跌延续，短剧漫剧流量高增，建议关注传媒ETF、影视ETF"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp3SzDj+sfK8zCfWJCM96lHA=",
+      "sampleTitle": "通信行业点评报告：卫星互联网低轨29组卫星成功发射，关注商业航天相关投资机会"
     }
   ]
 }
