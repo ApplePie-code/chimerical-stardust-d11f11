@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14 03:00:34",
+  "updated": "2026-11-15 02:30:53",
   "source": "东方财富研报中心",
   "totalReports": 600,
   "items": [
@@ -132,20 +132,20 @@
       "sampleTitle": "全球CXO 2026三季报业绩跟踪：CRO订单持续向好，CDMO增强新分子产能建设"
     },
     {
-      "keyword": "白酒",
-      "count": 7,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp1Yz5ihcAEn7qHSstSLC0+A=",
-      "sampleTitle": "食品饮料2026年三季报总结：白酒报表筑底、动销先行，乳制品、速冻显韧性，关注拐点改善/新增长动因企业"
-    },
-    {
       "keyword": "创新药",
       "count": 7,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp3S0BQURTLQKnm522MpJ5l4=",
       "sampleTitle": "创新药专题：中国之声闪耀2026ESMO"
+    },
+    {
+      "keyword": "白酒",
+      "count": 6,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=Ra+UWkQ1HCZSS4nqhYnnp1Yz5ihcAEn7qHSstSLC0+A=",
+      "sampleTitle": "食品饮料2026年三季报总结：白酒报表筑底、动销先行，乳制品、速冻显韧性，关注拐点改善/新增长动因企业"
     },
     {
       "keyword": "保险",
