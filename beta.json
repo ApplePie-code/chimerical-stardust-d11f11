@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20 03:55:46",
+  "updated": "2026-11-21 03:52:56",
   "source": "东方财富研报中心",
   "totalReports": 600,
   "items": [
@@ -13,11 +13,11 @@
     },
     {
       "keyword": "有色金属",
-      "count": 28,
+      "count": 29,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=yZa5ZHlcB9SZwpm/6KzWknsQBRMlT6qnuXwcNLTkOMo=",
-      "sampleTitle": "有色金属行业点评报告：海外美债持仓回落，估值扰动不等于资金撤离"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=yZa5ZHlcB9SZwpm/6KzWkn4HwKIabuXaZTkFMCFFW9I=",
+      "sampleTitle": "有色金属2027年度策略：寒枝蓄蕊，只待春信"
     },
     {
       "keyword": "机器人",
@@ -29,7 +29,7 @@
     },
     {
       "keyword": "银行",
-      "count": 23,
+      "count": 22,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=yZa5ZHlcB9SZwpm/6KzWkvVd+HfQ3IlWMmCPE2XfKqk=",
@@ -37,11 +37,19 @@
     },
     {
       "keyword": "储能",
-      "count": 19,
+      "count": 20,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=wEsqWOL04Jay2K6vXOdl37IUM7QZZ3FolVooC6KPWaI=",
-      "sampleTitle": "电力设备行业周报：十五五储能方案印发，乘用车零售环比改善"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=yZa5ZHlcB9SZwpm/6KzWkv8JvYumE3SQyGxwtMtWXLs=",
+      "sampleTitle": "储能行业2026年三季报综述：全球储能需求增长持续，看好政策变动后业绩修复"
+    },
+    {
+      "keyword": "通信",
+      "count": 20,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=yZa5ZHlcB9SZwpm/6KzWkjBEXLibfXRzoEsBPyoU9wY=",
+      "sampleTitle": "通信行业跟踪报告：通信行业业绩同比延续增长，通信设备延续高景气"
     },
     {
       "keyword": "机械",
@@ -52,16 +60,8 @@
       "sampleTitle": "机械设备行业周报：OpenAI或将机器人研究纳入通用模型体系"
     },
     {
-      "keyword": "通信",
-      "count": 18,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=wEsqWOL04Jay2K6vXOdl39Lrx677qa4w5CY6PuxRoy4=",
-      "sampleTitle": "通信行业专题研究点评：星舰二级“筷子”回收取得里程碑突破，可复用技术进阶打开商业航天成长空间"
-    },
-    {
       "keyword": "化工",
-      "count": 17,
+      "count": 16,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=dIELKAXwIQ6knp2d74A0JPjYwwimYs7qjHUG5VH4upM=",
@@ -180,6 +180,14 @@
       "sampleTitle": "全球CXO 2026三季报业绩跟踪：CRO订单持续向好，CDMO增强新分子产能建设"
     },
     {
+      "keyword": "保险",
+      "count": 4,
+      "trend": "rising",
+      "companies": [],
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=yZa5ZHlcB9SZwpm/6KzWkhCx/FEn9QNByox/hkasSWs=",
+      "sampleTitle": "保险Ⅱ行业点评报告：26Q3保险资金运用数据点评：逆势加仓股票投资，债券占比明显提升"
+    },
+    {
       "keyword": "营销",
       "count": 4,
       "trend": "rising",
@@ -234,14 +242,6 @@
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=dIELKAXwIQ6knp2d74A0JM9Rer9MIA04eoeZZC5MdXA=",
       "sampleTitle": "食品饮料行业2026年3季报业绩综述：业绩边际改善、结构分化，大众品好于白酒"
-    },
-    {
-      "keyword": "整车",
-      "count": 3,
-      "trend": "rising",
-      "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=wEsqWOL04Jay2K6vXOdl30JaLxbSOCSzOgJaLyXK+kI=",
-      "sampleTitle": "2027年汽车行业展望：行业Beta风险在“外”不在“内”；整车维持中立，零部件精选空间和格局均占优的细分赛道"
     }
   ]
 }
