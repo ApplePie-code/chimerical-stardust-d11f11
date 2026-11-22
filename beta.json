@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21 03:52:56",
+  "updated": "2026-11-22 02:57:04",
   "source": "东方财富研报中心",
   "totalReports": 600,
   "items": [
@@ -8,8 +8,8 @@
       "count": 35,
       "trend": "rising",
       "companies": [],
-      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=J3E4wVDNbQm9pTDjP0WiKlNUxNWNiTmPiFXKM8OkTE4=",
-      "sampleTitle": "医药行业行业研究：EASD 2026回顾：Lilly&Novo领衔，中国新药数据涌现"
+      "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=vkMPEc8FTuil8FLd8pWzP4mdv95C5guaIiIuZ3Y1fiU=",
+      "sampleTitle": "医药健康行业研究：医疗服务价格立项指南跟踪：项目规则全面统一，质量与效率驱动行业分化"
     },
     {
       "keyword": "有色金属",
@@ -29,7 +29,7 @@
     },
     {
       "keyword": "银行",
-      "count": 22,
+      "count": 21,
       "trend": "rising",
       "companies": [],
       "sampleUrl": "https://data.eastmoney.com/report/zw_stock.jshtml?encodeUrl=yZa5ZHlcB9SZwpm/6KzWkvVd+HfQ3IlWMmCPE2XfKqk=",
